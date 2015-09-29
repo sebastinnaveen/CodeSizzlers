@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"  version="2.5">
+ 
+
+  <!-- <servlet>
+    <servlet-name>GetController</servlet-name>
+    <servlet-class>com.verizon.cabbook.Controller.ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetController</servlet-name>
+    <url-pattern>/controller.portal</url-pattern>
+  </servlet-mapping>
+  -->
+ <error-page>
+<error-code>403</error-code>
+<location>/jsp/errorPage.jsp</location>
+</error-page>
+
+<error-page>
+<error-code>404</error-code>
+<location>/jsp/errorPage.jsp</location>
+</error-page>
+
+<error-page>
+<error-code>500</error-code>
+<location>/jsp/errorPage.jsp</location>
+</error-page>   
+
+</web-app>
+
