@@ -1,3 +1,4 @@
 applications:
-- name: vz  instances: 1
+- name: vz
+  instances: 1
   path: ./target/vz.war
