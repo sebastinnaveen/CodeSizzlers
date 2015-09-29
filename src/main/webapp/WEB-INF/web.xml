@@ -11,6 +11,7 @@
     <url-pattern>/controller.portal</url-pattern>
   </servlet-mapping>
   -->
+  
  <error-page>
 <error-code>403</error-code>
 <location>/jsp/errorPage.jsp</location>
