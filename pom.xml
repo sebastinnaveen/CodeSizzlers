@@ -4,4 +4,7 @@
   <artifactId>vz</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+   <build>
+    <finalName>vz</finalName>
+  </build>
 </project>
