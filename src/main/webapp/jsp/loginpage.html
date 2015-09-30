@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="views\Bootstrap.css" rel="stylesheet">
+    <link href="views\styles.css" rel="stylesheet">
+    <link href="views\grid.css" rel="stylesheet">
+    <link href="views\LoginCss.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header dark-bg">
+        <div class="toggle-nav">
+            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <a href="#" class="logo"> <span class="lite"><img alt="" src="image\verizon_logo.png" style="width: 225px;  margin-left: -20px; margin-top: -15px;" class="headerImg"></span></a>
+            </div>
+        </div>
+        <!--logo end-->
+    </header>
+    <div class="container">
+        <div class="flat-form Grid-cell--center">
+            <ul class="tabs">
+                <li> <b> LOGIN </b> </li>
+            </ul>
+            <div id="login" class="form-action show">
+                <div id="Text" >
+                    <h1>Code RED</h1>
+                </div>
+                
+                <form action="/Login/loginPage" method="post">
+                    <ul>
+                        <li>
+                            <input type="text" name="loginName" id="loginName" placeholder="Username" />
+                        </li>
+                        <li>
+                            <input type="password" name="loginPassword" id="loginPassword" placeholder="Password" />
+                        </li>
+                        <li>
+                            <center>
+                                <input type="submit" id="login-submit" value="Login" class="button" />
+                            </center>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
