@@ -280,10 +280,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="/vz/jsp/search.jsp"><i class="fa fa-table fa-fw"></i> Search</a>
+                            <a href="/jsp/search.jsp"><i class="fa fa-table fa-fw"></i> Search</a>
                         </li>
                         <li>
-                            <a href="/vz/jsp/admin.jsp"><i class="fa fa-dashboard fa-fw"></i>Admin Dashboard</a>
+                            <a href="/jsp/admin.jsp"><i class="fa fa-dashboard fa-fw"></i>Admin Dashboard</a>
                         </li>
                          <!--  <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Admin</a>
