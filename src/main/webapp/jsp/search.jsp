@@ -28,6 +28,9 @@
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+     <link href="../bower_components/bootstrap/dist/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +44,7 @@
 <body>
 
     <div id="wrapper">
-
+<% System.out.println(request.getParameter("email")); %>
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -76,7 +79,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <strong>John Smith</strong>
+                                    <strong>VzAdmin</strong>
                                     <span class="pull-right text-muted">
                                         <em>Yesterday</em>
                                     </span>
@@ -88,7 +91,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <strong>John Smith</strong>
+                                    <strong>VzAdmin</strong>
                                     <span class="pull-right text-muted">
                                         <em>Yesterday</em>
                                     </span>
@@ -116,12 +119,12 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>Task 1</strong>
+                                        <strong>Compression 1</strong>
                                         <span class="pull-right text-muted">40% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
+                                            <span class="sr-only">40% Complete </span>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +135,7 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>Task 2</strong>
+                                        <strong>Compression 2</strong>
                                         <span class="pull-right text-muted">20% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
@@ -148,12 +151,12 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>Task 3</strong>
+                                        <strong>Compression 3</strong>
                                         <span class="pull-right text-muted">60% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
                                         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
+                                            <span class="sr-only">60% Complete </span>
                                         </div>
                                     </div>
                                 </div>
@@ -164,12 +167,12 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>Task 4</strong>
+                                        <strong>Compression 4</strong>
                                         <span class="pull-right text-muted">80% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
                                         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
+                                            <span class="sr-only">80% Complete </span>
                                         </div>
                                     </div>
                                 </div>
@@ -194,7 +197,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <i class="fa fa-comment fa-fw"></i> New outgoing call
                                     <span class="pull-right text-muted small">4 minutes ago</span>
                                 </div>
                             </a>
@@ -203,7 +206,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Messages
                                     <span class="pull-right text-muted small">12 minutes ago</span>
                                 </div>
                             </a>
@@ -221,7 +224,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <i class="fa fa-tasks fa-fw"></i> New Incoming Route
                                     <span class="pull-right text-muted small">4 minutes ago</span>
                                 </div>
                             </a>
@@ -230,7 +233,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <i class="fa fa-upload fa-fw"></i> New incoming call
                                     <span class="pull-right text-muted small">4 minutes ago</span>
                                 </div>
                             </a>
@@ -380,33 +383,7 @@
         </nav>
 
         <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Search Records</h1>
-                </div>
-                 <div class="col-lg-6">
-                   <form role="form">
-                                        <div class="form-group">
-                                            <label>MobileNo</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>IMEI No</label>
-                                            <input class="form-control" placeholder="Enter text">
-                                        </div>
-                                      
-                                     
-                                     
-                                      
-                                    
-                                        <button  class="btn btn-default" onclick="">Submit</button>
-                                        <button type="reset" class="btn btn-default">Reset</button>
-                                    </form>
-                                    </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
+          
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -416,18 +393,20 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table id="dataTables-example"></table>
+                             <!--<table class="table table-striped table-bordered table-hover" id="dataTables-example" data-url="/vz/searchcontroller" data-height="400" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true">
                                     <thead>
                                         <tr>
-                                            <th>FileName</th>
+                                            <th>Mobile No</th>
                                             <th>Call Duration</th>
                                             <th>Originating Cell Id</th>
                                             <th>Destinating Cell Id</th>
                                             <th>IMEI NO</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr class="odd gradeX">
+                                    <tbody >
+                                  
+                                      <tr class="odd gradeX">
                                             <td>Trident</td>
                                             <td>Internet Explorer 4.0</td>
                                             <td>Win 95+</td>
@@ -826,9 +805,9 @@
                                             <td>-</td>
                                             <td class="center">-</td>
                                             <td class="center">U</td>
-                                        </tr>
+                                        </tr> 
                                     </tbody>
-                                </table>
+                                </table>--> 
                             </div>
                             <!-- /.table-responsive -->
                            
@@ -855,9 +834,9 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+ <script src="../bower_components/bootstrap/dist/js/bootstrap-table.min.js"></script>
+    
+    <!-- <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
@@ -866,10 +845,123 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
+       
+    $('#dataTables-example').bootstrapTable({
+                                    method: 'get',
+                                    url: '/vz/jsp/data2.json',
+                                    cache: false,
+                                    height: 400,
+                                    striped: true,
+                                    pagination: true,
+                                    pageSize: 50,
+                                    pageList: [10, 25, 50, 100, 200],
+                                    search: true,
+                                     responsive: true,
+                                    showColumns: true,
+                                    showRefresh: true,
+                                    minimumCountColumns: 2,
+                                    clickToSelect: true,
+                                    columns: [ {
+                                        field: 'mobileno',
+                                        title: 'Mobile No',
+                                        align: 'right',
+                                        valign: 'bottom',
+                                        sortable: true
+                                    }, {
+                                        field: 'calledno',
+                                        title: 'Called No',
+                                        align: 'center',
+                                        valign: 'middle',
+                                        sortable: true,
+                                       
+                                    }, {
+                                        field: 'incomingroute',
+                                        title: 'Incoming Route',
+                                        align: 'left',
+                                        valign: 'top',
+                                        sortable: true,
+                                       
+                                    }, {
+                                        field: 'outgoingroute',
+                                        title: 'Outgoing Route',
+                                        align: 'left',
+                                        valign: 'top',
+                                        sortable: true,
+                                       
+                                    }, {
+                                        field: 'imeino',
+                                        title: 'IMEI No',
+                                        align: 'left',
+                                        valign: 'top',
+                                        sortable: true,
+                                       
+                                    }, {
+                                        field: 'callduration',
+                                        title: 'Call Duration',
+                                        align: 'left',
+                                        valign: 'top',
+                                        sortable: true,
+                                       
+                                    }]
+                                });
+                            
+      });
+    function searchCall(){
+    $.post( "/vz/searchcontroller.portal", { type: "John", time: "2pm" })
+  .done(function( data ) {
+  // $( ".tbodyrecords" ).html( data );
+ //  $( "#dataTables-example" ).replaceWith( data );
+   $('#dataTables-example').bootstrapTable("load",data);
+  });
+  }
+  function nameFormatter(value, row) {
+                            var icon = row.id % 2 === 0 ? 'glyphicon-star' : 'glyphicon-star-empty'
+
+                            return '<i class="glyphicon ' + icon + '"></i> ' + value;
+                        }
+
+                        function priceFormatter(value) {
+                            // 16777215 == ffffff in decimal
+                            var color = '#'+Math.floor(Math.random() * 6777215).toString(16);
+                            return '<div  style="color: ' + color + '">' +
+                                    '<i class="glyphicon glyphicon-usd"></i>' +
+                                    value.substring(1) +
+                                    '</div>';
+                        }
+                        function priceSorter(a, b) {
+                            a = +a.substring(1); // remove $
+                            b = +b.substring(1);
+                            if (a > b) return 1;
+                            if (a < b) return -1;
+                            return 0;
+                        }
+                        function operateFormatter(value, row, index) {
+                            return [
+                                '<a class="like" href="javascript:void(0)" title="Like">',
+                                    '<i class="glyphicon glyphicon-heart"></i>',
+                                '</a>',
+                                '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
+                                    '<i class="glyphicon glyphicon-edit"></i>',
+                                '</a>',
+                                '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
+                                    '<i class="glyphicon glyphicon-remove"></i>',
+                                '</a>'
+                            ].join('');
+                        }
+                         window.operateEvents = {
+                            'click .like': function (e, value, row, index) {
+                                alert('You click like icon, row: ' + JSON.stringify(row));
+                                console.log(value, row, index);
+                            },
+                            'click .edit': function (e, value, row, index) {
+                                alert('You click edit icon, row: ' + JSON.stringify(row));
+                                console.log(value, row, index);
+                            },
+                            'click .remove': function (e, value, row, index) {
+                                alert('You click remove icon, row: ' + JSON.stringify(row));
+                                console.log(value, row, index);
+                            }
+                        };
     </script>
 
 </body>

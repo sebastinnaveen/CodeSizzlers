@@ -45,10 +45,10 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="E-mail" id="email" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="password" id="email" name="password" type="password" value="">
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -78,5 +78,30 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
 </body>
+<script language="javascript" type="text/javascript">  
+        var xmlHttp  
+        function showState(str)
+        {
+            //if you want any text box value you can get it like below line. 
+            //just make sure you have specified its "id" attribute
+            var email=document.getElementById("email").value;
+            if (typeof XMLHttpRequest != "undefined")
+            {
+              xmlHttp= new XMLHttpRequest();
+            }
+            var url="/vz/jsp/search.jsp";
+            url +="?email=" +email;
+            xmlHttp.onreadystatechange = stateChange;
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send(null);
+        }
+        function stateChange()
+        {   
+            if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+            {   
+                document.getElementById("div_id").innerHTML=xmlHttp.responseText   
+            }   
+        }
+      </script>
 
 </html>
