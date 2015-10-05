@@ -848,7 +848,7 @@
        
     $('#dataTables-example').bootstrapTable({
                                     method: 'get',
-                                    url: '/vz/jsp/data2.json',
+                                    url: '/jsp/data2.json',
                                     cache: false,
                                     height: 400,
                                     striped: true,
