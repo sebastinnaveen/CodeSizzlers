@@ -4,29 +4,27 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Content implements Serializable {
 
-	
-	public List<String> registrationIds;
-	public HashMap<String, String> mapData;
-	
-	public  void addRegId(String regId)
-	{
-		registrationIds = new LinkedList<String>();
-		
-		registrationIds.add(regId);
-		
-	}
-	
-	public void createData(String key,String values)
-	{
-		if(mapData==null)
-			mapData= new HashMap<String, String>();
-		
-		mapData.put(key, values);
-	}
-		
+public List<String> registration_ids;
+public Map<String,String> data;
+
+public void addRegId(String regId){
+    if(registration_ids == null)
+        registration_ids = new LinkedList<String>();
+    registration_ids.add(regId);
 }
 
+public void createData(String title, String message){
+    if(data == null)
+        data = new HashMap<String,String>();
+    
+    data.put("customerName", "sebastinnaveen");
+    data.put("customerLocation", "chennai");
+    data.put("customerNumber", "12345");
+    data.put("msgTech", "Fios Dispatch Job");
+}
 
+}

@@ -73,85 +73,33 @@ public class TestServlet extends HttpServlet {
     		msgBean.setCustomerNumber(request.getParameter("customerNumber"));
     		//msgBean.setMsgTech(request.getParameter("message"));
     
-    		c.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");
-    		c.createData("customerName", "sebastinnaveen");
-    		c.createData("customerLocation", "chennai");
-    		c.createData("customerNumber", "12345");
-    		c.createData("msgTech", "Fios Dispatch Job");
+    		//c.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");
+    		//c.createData("customerName", "sebastinnaveen");
+//    		c.createData("customerLocation", "chennai");
+//    		c.createData("customerNumber", "12345");
+//    		c.createData("msgTech", "Fios Dispatch Job");
     		       		
     	
-			TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
-				
-				public X509Certificate[] getAcceptedIssuers() {
-					// TODO Auto-generated method stub
-					return null;
-				}
-				
-				public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-					// TODO Auto-generated method stub
-					
-				}
-			}};
-			
-			SSLContext sc;
-			sc= SSLContext.getInstance("SSL");
-			sc.init(null, trustAllCerts ,new java.security.SecureRandom());
-			
-			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-			
-			HostnameVerifier allHostValid = new HostnameVerifier() {
-				
-				public boolean verify(String hostname, SSLSession session) {
-					// TODO Auto-generated method stub
-					return true;
-				}
-			};
-			
-			
-			
-			HttpsURLConnection.setDefaultHostnameVerifier(allHostValid);
-			
-			URL url = new URL("https://android.googleapis.com/gcm/send");
-			
-			conn = (HttpURLConnection)url.openConnection();//.openConnection(ProxyUtils.getProxy());
-			
-			conn.setRequestMethod("POST");
-			conn.setRequestProperty("Content-Type", "application/json");
-			conn.setRequestProperty("Authorization", "key="+apiKey);
-			conn.setDoOutput(true);
-			
-			ObjectMapper mapper = new ObjectMapper();
-			
-			DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-			mapper.writeValue(wr, c);
-			wr.flush();
-			wr.close();
-			int responseCode = conn.getResponseCode();
-			System.out.println(responseCode);
-			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			String inputLine;
-			StringBuffer responseBuff = new StringBuffer();
-			while((inputLine=in.readLine())!= null)
-			{
-				responseBuff.append(inputLine);
-			}
-			in.close();
-			
-			response.getWriter().append("Served at: ").append(request.getContextPath());
+    		Content content = new Content();
+    		   //POJO class as above for standard message format
+    		   content.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");       
+    		   content.createData("Title", "Notification Message");
+    		   URL url = new URL("https://android.googleapis.com/gcm/send");
+    		   conn = (HttpURLConnection) url.openConnection();
+    		   conn.setRequestMethod("POST");
+    		   conn.setRequestProperty("Content-Type", "application/json");
+    		   conn.setRequestProperty("Authorization", "key="+apiKey);
+    		   conn.setDoOutput(true);
+    		   ObjectMapper mapper = new ObjectMapper();
+    		   DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+    		   mapper.writeValue(wr, content);
+    		   wr.flush();
+    		   wr.close();
+    		  int responseCode = conn.getResponseCode();
+			response.getWriter().append("Served at: ").append(String.valueOf(responseCode));
     		 
 		}catch(MalformedURLException e){e.printStackTrace();response.getWriter().append("Error at: ").append(e.getMessage());}
 		catch (IOException e) {
-			e.printStackTrace();
-			response.getWriter().append("Error at: ").append(e.getMessage());
-		}catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-			response.getWriter().append("Error at: ").append(e.getMessage());
-		}catch (KeyManagementException e) {
 			e.printStackTrace();
 			response.getWriter().append("Error at: ").append(e.getMessage());
 		}
