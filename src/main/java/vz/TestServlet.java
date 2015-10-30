@@ -82,7 +82,8 @@ public class TestServlet extends HttpServlet {
     	
     		Content content = new Content();
     		   //POJO class as above for standard message format
-    		   content.addRegId("APA91bERQuEQxDtlMdmdGZ96-A3lRfvn_y4Wt0fE55G5rfmG7M93P9lcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jlt1y5z_l1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");       
+    		  // content.addRegId("APA91bERQuEQxDtlMdmdGZ96-A3lRfvn_y4Wt0fE55G5rfmG7M93P9lcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jlt1y5z_l1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");
+    		content.addRegId("APA91bE40Poia4sfOJpEmCQ6ktGRxcxkFLC0NRYOqZRRdNFZx1jM5LxRAY_ARQ-s45GRMMhkdiJ8g2CuDT5KyhVZCYaSjJLxUyAlez93bvBcvqQuW6Qac4NUqrOfFVj0CDNHqJKiJwQQ");
     		   content.createData("Title", "Notification Message");
     		   URL url = new URL("https://android.googleapis.com/gcm/send");
     		   conn = (HttpURLConnection) url.openConnection();
