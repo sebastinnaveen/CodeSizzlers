@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Marker Animations</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+		width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="map"></div>
+	<script>
+
+var marker;
+
+function initMap() {
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+	//State Latitude & Longitude
+    center: {lat: 13.0900, lng: 80.2700}
+  });
+
+  var image1 = "green1-dot.png";
+  marker = new google.maps.Marker({
+    map: map,
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+	icon : image1,
+    position: {lat: 13.0497, lng: 80.2126}
+  });
+  marker.addListener('click', toggleBounce);
+  
+  
+  marker = new google.maps.Marker({
+    map: map,
+    draggable: true,			
+    animation: google.maps.Animation.DROP,
+	icon : image1,
+    position: {lat: 12.9531946, lng: 80.1416008}
+  });
+  marker.addListener('click', toggleBounce);
+  
+}
+
+function clickMap()
+{
+	if(document.getElementById("map").style.display == 'none')
+	{
+		document.getElementById("map").style.display = 'block';
+	}
+}
+
+function toggleBounce() {
+  
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }  
+}
+
+    </script>
+	<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLtx1iYEW18xQTa46fpP_O4VOhBQpy4O8&signed_in=true&callback=initMap">		
+		</script>
+  </body>
+  </html>

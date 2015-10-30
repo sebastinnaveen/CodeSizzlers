@@ -1,18 +1,40 @@
 package vz;
+import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.MulticastResult;
+import com.google.android.gcm.server.Sender;
+import com.google.gson.Gson;
 
-
-
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.SocketException;
+import java.net.URL;
+import java.nio.channels.MulticastChannel;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.codehaus.jackson.map.ObjectMapper;
 
 //import org.apache.log4j.//logger;
 
@@ -55,8 +77,137 @@ public class SearchController extends HttpServlet {
  try {
 	 //logger.info("Inside servlet");
      String requestType = request.getParameter("type");
-     System.out.println("requestType--->"+requestType);
-String requestString =" <thead>" +
+     if(requestType.equalsIgnoreCase("Notify"))
+     {
+    	 
+    	 System.out.println("calling");
+    	 String apiKey="AIzaSyBLtx1iYEW18xQTa46fpP_O4VOhBQpy4O8";
+    		Sender sender = new Sender(apiKey);
+    		ArrayList<String> deviceIds = new ArrayList<String>();
+    		deviceIds.add("1");
+    		Gson json= new Gson();
+    		
+    		Content c = new Content();
+    		HttpURLConnection conn = null;
+    		try
+    		{
+    			MessageBean msgBean = new MessageBean();
+        		msgBean.setCustomerName(request.getParameter("customerName"));
+        		msgBean.setCustomerLocation(request.getParameter("customerLocation"));
+        		msgBean.setCustomerNumber(request.getParameter("customerNumber"));
+        		//msgBean.setMsgTech(request.getParameter("message"));
+        
+        		c.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");
+        		c.createData("customerName", request.getParameter("customerName"));
+        		c.createData("customerLocation", request.getParameter("customerLocation"));
+        		c.createData("customerNumber", request.getParameter("customerNumber"));
+        		c.createData("msgTech", "Fios Dispatch Job");
+        		       		
+        	
+    			TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+					
+					public X509Certificate[] getAcceptedIssuers() {
+						// TODO Auto-generated method stub
+						return null;
+					}
+					
+					public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+						// TODO Auto-generated method stub
+						
+					}
+				}};
+    			
+    			SSLContext sc;
+    			sc= SSLContext.getInstance("SSL");
+    			sc.init(null, trustAllCerts ,new java.security.SecureRandom());
+    			
+    			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+    			
+    			HostnameVerifier allHostValid = new HostnameVerifier() {
+					
+					public boolean verify(String hostname, SSLSession session) {
+						// TODO Auto-generated method stub
+						return true;
+					}
+				};
+				
+				
+				
+				HttpsURLConnection.setDefaultHostnameVerifier(allHostValid);
+				
+				URL url = new URL("https://android.googleapis.com/gcm/send");
+				
+				conn = (HttpURLConnection)url.openConnection();//.openConnection(ProxyUtils.getProxy());
+				
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Content-Type", "application/json");
+				conn.setRequestProperty("Authorization", "key="+apiKey);
+				conn.setDoOutput(true);
+				
+				ObjectMapper mapper = new ObjectMapper();
+				
+				DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+				mapper.writeValue(wr, c);
+				wr.flush();
+				wr.close();
+				int responseCode = conn.getResponseCode();
+				System.out.println(responseCode);
+				BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				String inputLine;
+				StringBuffer responseBuff = new StringBuffer();
+				while((inputLine=in.readLine())!= null)
+				{
+					responseBuff.append(inputLine);
+				}
+				in.close();
+				
+				request.setAttribute("succMsg", responseBuff);
+	    		request.setAttribute("errorCode", responseCode);
+	    		
+    		}catch(MalformedURLException e){e.printStackTrace();}
+    		catch (IOException e) {
+    			e.printStackTrace();
+			}catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}catch (KeyManagementException e) {
+				e.printStackTrace();
+			}
+    		
+    		
+    		/*String jsonMsg = json.toJson(msgBean);
+    		
+    		Message msg = new Message.Builder().addData("message", jsonMsg).build();
+    		
+    		MulticastResult result = sender.send(msg, deviceIds, 1);
+    		
+    		String succMsg="";
+    		int errorCode=0;
+    		if(result.getResults()!=null)
+    		{
+    			int canonicalId = result.getCanonicalIds();
+    			if(canonicalId!=0)
+    			{
+    				
+    				errorCode = result.getSuccess();
+    			}
+    			else
+    			{
+    				succMsg ="Failure";
+    				errorCode = result.getFailure();
+    			}
+    		}*/
+    		
+    		
+     }
+     else if(requestType.equals("CMR"))
+     {
+    	 System.out.println("requestType--->"+requestType);
+    	 String requestString =" <thead>" +
                                         "<tr>"+
                                             "<th>Mobile No</th>"+
                                             "<th>Call Duration</th>"+
@@ -72,410 +223,23 @@ String requestString =" <thead>" +
                                             "<td class=\"center\">4</td>"+
                                             "<td class=\"center\">X</td>" +
                                        " </tr></tbody>" ;
-response.setContentType("text/html;charset=UTF-8");
-PrintWriter out = response.getWriter();
-try {
-    /* TODO output your response here.*/
-    out.println(requestString);
-} finally {
-    out.close();
-}
-//                                        <tr class="even gradeC">
-//                                            <td>Trident</td>
-//                                            <td>Internet Explorer 5.0</td>
-//                                            <td>Win 95+</td>
-//                                            <td class="center">5</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="odd gradeA">
-//                                            <td>Trident</td>
-//                                            <td>Internet Explorer 5.5</td>
-//                                            <td>Win 95+</td>
-//                                            <td class="center">5.5</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="even gradeA">
-//                                            <td>Trident</td>
-//                                            <td>Internet Explorer 6</td>
-//                                            <td>Win 98+</td>
-//                                            <td class="center">6</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="odd gradeA">
-//                                            <td>Trident</td>
-//                                            <td>Internet Explorer 7</td>
-//                                            <td>Win XP SP2+</td>
-//                                            <td class="center">7</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="even gradeA">
-//                                            <td>Trident</td>
-//                                            <td>AOL browser (AOL desktop)</td>
-//                                            <td>Win XP</td>
-//                                            <td class="center">6</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Firefox 1.0</td>
-//                                            <td>Win 98+ / OSX.2+</td>
-//                                            <td class="center">1.7</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Firefox 1.5</td>
-//                                            <td>Win 98+ / OSX.2+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Firefox 2.0</td>
-//                                            <td>Win 98+ / OSX.2+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Firefox 3.0</td>
-//                                            <td>Win 2k+ / OSX.3+</td>
-//                                            <td class="center">1.9</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Camino 1.0</td>
-//                                            <td>OSX.2+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Camino 1.5</td>
-//                                            <td>OSX.3+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Netscape 7.2</td>
-//                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-//                                            <td class="center">1.7</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Netscape Browser 8</td>
-//                                            <td>Win 98SE+</td>
-//                                            <td class="center">1.7</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Netscape Navigator 9</td>
-//                                            <td>Win 98+ / OSX.2+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.0</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.1</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1.1</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.2</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1.2</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.3</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1.3</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.4</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1.4</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.5</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1.5</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.6</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">1.6</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.7</td>
-//                                            <td>Win 98+ / OSX.1+</td>
-//                                            <td class="center">1.7</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Mozilla 1.8</td>
-//                                            <td>Win 98+ / OSX.1+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Seamonkey 1.1</td>
-//                                            <td>Win 98+ / OSX.2+</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Gecko</td>
-//                                            <td>Epiphany 2.20</td>
-//                                            <td>Gnome</td>
-//                                            <td class="center">1.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>Safari 1.2</td>
-//                                            <td>OSX.3</td>
-//                                            <td class="center">125.5</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>Safari 1.3</td>
-//                                            <td>OSX.3</td>
-//                                            <td class="center">312.8</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>Safari 2.0</td>
-//                                            <td>OSX.4+</td>
-//                                            <td class="center">419.3</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>Safari 3.0</td>
-//                                            <td>OSX.4+</td>
-//                                            <td class="center">522.1</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>OmniWeb 5.5</td>
-//                                            <td>OSX.4+</td>
-//                                            <td class="center">420</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>iPod Touch / iPhone</td>
-//                                            <td>iPod</td>
-//                                            <td class="center">420.1</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Webkit</td>
-//                                            <td>S60</td>
-//                                            <td>S60</td>
-//                                            <td class="center">413</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 7.0</td>
-//                                            <td>Win 95+ / OSX.1+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 7.5</td>
-//                                            <td>Win 95+ / OSX.2+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 8.0</td>
-//                                            <td>Win 95+ / OSX.2+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 8.5</td>
-//                                            <td>Win 95+ / OSX.2+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 9.0</td>
-//                                            <td>Win 95+ / OSX.3+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 9.2</td>
-//                                            <td>Win 88+ / OSX.3+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera 9.5</td>
-//                                            <td>Win 88+ / OSX.3+</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Opera for Wii</td>
-//                                            <td>Wii</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Nokia N800</td>
-//                                            <td>N800</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Presto</td>
-//                                            <td>Nintendo DS browser</td>
-//                                            <td>Nintendo DS</td>
-//                                            <td class="center">8.5</td>
-//                                            <td class="center">C/A<sup>1</sup>
-//                                            </td>
-//                                        </tr>
-//                                        <tr class="gradeC">
-//                                            <td>KHTML</td>
-//                                            <td>Konqureror 3.1</td>
-//                                            <td>KDE 3.1</td>
-//                                            <td class="center">3.1</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>KHTML</td>
-//                                            <td>Konqureror 3.3</td>
-//                                            <td>KDE 3.3</td>
-//                                            <td class="center">3.3</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>KHTML</td>
-//                                            <td>Konqureror 3.5</td>
-//                                            <td>KDE 3.5</td>
-//                                            <td class="center">3.5</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeX">
-//                                            <td>Tasman</td>
-//                                            <td>Internet Explorer 4.5</td>
-//                                            <td>Mac OS 8-9</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">X</td>
-//                                        </tr>
-//                                        <tr class="gradeC">
-//                                            <td>Tasman</td>
-//                                            <td>Internet Explorer 5.1</td>
-//                                            <td>Mac OS 7.6-9</td>
-//                                            <td class="center">1</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="gradeC">
-//                                            <td>Tasman</td>
-//                                            <td>Internet Explorer 5.2</td>
-//                                            <td>Mac OS 8-X</td>
-//                                            <td class="center">1</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Misc</td>
-//                                            <td>NetFront 3.1</td>
-//                                            <td>Embedded devices</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="gradeA">
-//                                            <td>Misc</td>
-//                                            <td>NetFront 3.4</td>
-//                                            <td>Embedded devices</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">A</td>
-//                                        </tr>
-//                                        <tr class="gradeX">
-//                                            <td>Misc</td>
-//                                            <td>Dillo 0.8</td>
-//                                            <td>Embedded devices</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">X</td>
-//                                        </tr>
-//                                        <tr class="gradeX">
-//                                            <td>Misc</td>
-//                                            <td>Links</td>
-//                                            <td>Text only</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">X</td>
-//                                        </tr>
-//                                        <tr class="gradeX">
-//                                            <td>Misc</td>
-//                                            <td>Lynx</td>
-//                                            <td>Text only</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">X</td>
-//                                        </tr>
-//                                        <tr class="gradeC">
-//                                            <td>Misc</td>
-//                                            <td>IE Mobile</td>
-//                                            <td>Windows Mobile 6</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="gradeC">
-//                                            <td>Misc</td>
-//                                            <td>PSP browser</td>
-//                                            <td>PSP</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">C</td>
-//                                        </tr>
-//                                        <tr class="gradeU">
-//                                            <td>Other browsers</td>
-//                                            <td>All others</td>
-//                                            <td>-</td>
-//                                            <td class="center">-</td>
-//                                            <td class="center">U</td>
-//                                        </tr>"
-     
+//    	 		response.setContentType("text/html;charset=UTF-8");
+//    	 		PrintWriter out = response.getWriter();
+//    	 		try {
+//    	 				/* TODO output your response here.*/
+//    	 				out.println(requestString);
+//    	 			} finally {
+//    	 					out.close();
+//    	 			}
+    	 
+     	}
+     request.setAttribute("success", "mobilesub");
+     RequestDispatcher rd = request.getRequestDispatcher("/jsp/successMessage.jsp");
+		rd.include(request, response);
  } catch (Exception e) {
+	 e.printStackTrace();
      //logger.error("Error in servlet::" + e);
+	 
  }
 }  
 	
