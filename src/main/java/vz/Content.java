@@ -1,10 +1,11 @@
 package vz;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Content {
+public class Content implements Serializable {
 
 	
 	public List<String> registrationIds;
