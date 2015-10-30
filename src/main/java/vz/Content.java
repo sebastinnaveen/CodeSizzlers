@@ -22,9 +22,9 @@ public void createData(String title, String message){
         data = new HashMap<String,String>();
     
     data.put("customerName", "sebastinnaveen");
-    data.put("customerLocation", "chennai");
-    data.put("customerNumber", "12345");
-    data.put("msgTech", "Fios Dispatch Job");
+    data.put("customerLocation", "Tambaram,chennai");
+    data.put("customerNumber", "9840384885");
+    data.put("msgTech", "Fios Dispatch Request - 11011");
 }
 
 }

@@ -97,90 +97,51 @@ public class SearchController extends HttpServlet {
         		msgBean.setCustomerNumber(request.getParameter("customerNumber"));
         		//msgBean.setMsgTech(request.getParameter("message"));
         
-        		c.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");
-        		c.createData("customerName", request.getParameter("customerName"));
-        		c.createData("customerLocation", request.getParameter("customerLocation"));
-        		c.createData("customerNumber", request.getParameter("customerNumber"));
-        		c.createData("msgTech", "Fios Dispatch Job");
+        		//c.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");
+        	//	c.createData("customerName", "sebastinnaveen");
+//        		c.createData("customerLocation", "Tambaram,chennai");
+//        		c.createData("customerNumber", "");
+//        		c.createData("msgTech", "Fios Dispatch Job");
         		       		
         	
-    			TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
-					
-					public X509Certificate[] getAcceptedIssuers() {
-						// TODO Auto-generated method stub
-						return null;
-					}
-					
-					public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-						// TODO Auto-generated method stub
-						
-					}
-					
-					public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-						// TODO Auto-generated method stub
-						
-					}
-				}};
-    			
-    			SSLContext sc;
-    			sc= SSLContext.getInstance("SSL");
-    			sc.init(null, trustAllCerts ,new java.security.SecureRandom());
-    			
-    			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-    			
-    			HostnameVerifier allHostValid = new HostnameVerifier() {
-					
-					public boolean verify(String hostname, SSLSession session) {
-						// TODO Auto-generated method stub
-						return true;
-					}
-				};
-				
-				
-				
-				HttpsURLConnection.setDefaultHostnameVerifier(allHostValid);
-				
-				URL url = new URL("https://android.googleapis.com/gcm/send");
-				
-				conn = (HttpURLConnection)url.openConnection();//.openConnection(ProxyUtils.getProxy());
-				
-				conn.setRequestMethod("POST");
-				conn.setRequestProperty("Content-Type", "application/json");
-				conn.setRequestProperty("Authorization", "key="+apiKey);
-				conn.setDoOutput(true);
-				
-				ObjectMapper mapper = new ObjectMapper();
-				
-				DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-				mapper.writeValue(wr, c);
-				wr.flush();
-				wr.close();
-				int responseCode = conn.getResponseCode();
-				System.out.println(responseCode);
-				BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-				String inputLine;
-				StringBuffer responseBuff = new StringBuffer();
-				while((inputLine=in.readLine())!= null)
-				{
-					responseBuff.append(inputLine);
-				}
-				in.close();
-				
-				request.setAttribute("succMsg", responseBuff);
-	    		request.setAttribute("errorCode", responseCode);
-	    		
-    		}catch(MalformedURLException e){e.printStackTrace();throw  e;}
+        		Content content = new Content();
+        		   //POJO class as above for standard message format
+        		  // content.addRegId("APA91bERQuEQxDtlMdmdGZ96-A3lRfvn_y4Wt0fE55G5rfmG7M93P9lcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jlt1y5z_l1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");
+        		content.addRegId("APA91bE40Poia4sfOJpEmCQ6ktGRxcxkFLC0NRYOqZRRdNFZx1jM5LxRAY_ARQ-s45GRMMhkdiJ8g2CuDT5KyhVZCYaSjJLxUyAlez93bvBcvqQuW6Qac4NUqrOfFVj0CDNHqJKiJwQQ");
+        		   content.createData("Title", "Notification Message");
+        		   URL url = new URL("https://android.googleapis.com/gcm/send");
+        		   conn = (HttpURLConnection) url.openConnection();
+        		   conn.setRequestMethod("POST");
+        		   conn.setRequestProperty("Content-Type", "application/json");
+        		   conn.setRequestProperty("Authorization", "key="+apiKey);
+        		   conn.setDoOutput(true);
+        		   ObjectMapper mapper = new ObjectMapper();
+        		   DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        		   mapper.writeValue(wr, content);
+        		   wr.flush();
+        		   wr.close();
+        		  int responseCode = conn.getResponseCode();
+        		  BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+    				String inputLine;
+    				StringBuffer responseBuff = new StringBuffer();
+    				while((inputLine=in.readLine())!= null)
+    				{
+    					responseBuff.append(inputLine);
+    				}
+    				in.close();
+    			//	response.getWriter().append("Response Code: ").append(String.valueOf(responseCode));
+    			//response.getWriter().append("Served at: ").append(responseBuff.toString());
+        		 
+    		}catch(MalformedURLException e){e.printStackTrace();
+    		//response.getWriter().append("Error at: ").append(e.getMessage());
+    		}
     		catch (IOException e) {
     			e.printStackTrace();
-    			throw  e;
-			}catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
-				throw  e;
-			}catch (KeyManagementException e) {
-				e.printStackTrace();
-				throw  e;
-			}
-    		
+    			//response.getWriter().append("Error at: ").append(e.getMessage());
+    		}
+    		request.setAttribute("success", "mobilesub");
+    	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/successMessage.jsp");
+    			rd.include(request, response);
     		
     		/*String jsonMsg = json.toJson(msgBean);
     		
@@ -236,9 +197,7 @@ public class SearchController extends HttpServlet {
 //    	 			}
     	 
      	}
-     request.setAttribute("success", "mobilesub");
-     RequestDispatcher rd = request.getRequestDispatcher("/jsp/successMessage.jsp");
-		rd.include(request, response);
+     
  } catch (Exception e) {
 	 e.printStackTrace();
      //logger.error("Error in servlet::" + e);
