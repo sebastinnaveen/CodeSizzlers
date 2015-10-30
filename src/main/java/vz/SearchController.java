@@ -169,13 +169,16 @@ public class SearchController extends HttpServlet {
 				request.setAttribute("succMsg", responseBuff);
 	    		request.setAttribute("errorCode", responseCode);
 	    		
-    		}catch(MalformedURLException e){e.printStackTrace();}
+    		}catch(MalformedURLException e){e.printStackTrace();throw  e;}
     		catch (IOException e) {
     			e.printStackTrace();
+    			throw  e;
 			}catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();
+				throw  e;
 			}catch (KeyManagementException e) {
 				e.printStackTrace();
+				throw  e;
 			}
     		
     		
