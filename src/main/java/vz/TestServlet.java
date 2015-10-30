@@ -96,7 +96,16 @@ public class TestServlet extends HttpServlet {
     		   wr.flush();
     		   wr.close();
     		  int responseCode = conn.getResponseCode();
-			response.getWriter().append("Served at: ").append(String.valueOf(responseCode));
+    		  BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				String inputLine;
+				StringBuffer responseBuff = new StringBuffer();
+				while((inputLine=in.readLine())!= null)
+				{
+					responseBuff.append(inputLine);
+				}
+				in.close();
+				response.getWriter().append("Response Code: ").append(String.valueOf(responseCode));
+			response.getWriter().append("Served at: ").append(responseBuff.toString());
     		 
 		}catch(MalformedURLException e){e.printStackTrace();response.getWriter().append("Error at: ").append(e.getMessage());}
 		catch (IOException e) {
