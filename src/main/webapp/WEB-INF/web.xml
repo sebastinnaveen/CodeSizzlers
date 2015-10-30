@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="WINDOWS-1252"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"  version="2.5">
- 
-
-   <servlet>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
     <servlet-name>SearchController</servlet-name>
     <servlet-class>vz.SearchController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchController</servlet-name>
-    <url-pattern>/searchcontroller.portal</url-pattern>
+    <url-pattern>/searchController</url-pattern>
   </servlet-mapping>
-  
-  
- <error-page>
-<error-code>403</error-code>
-<location>/jsp/errorPage.jsp</location>
-</error-page>
-
-<error-page>
-<error-code>404</error-code>
-<location>/jsp/errorPage.jsp</location>
-</error-page>
-
-<error-page>
-<error-code>500</error-code>
-<location>/jsp/errorPage.jsp</location>
-</error-page>   
-
+  <error-page>
+    <error-code>403</error-code>
+    <location>/jsp/errorPage.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/jsp/errorPage.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/jsp/errorPage.jsp</location>
+  </error-page>
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>vz.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
-

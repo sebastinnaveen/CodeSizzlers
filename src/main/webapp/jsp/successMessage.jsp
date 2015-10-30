@@ -79,7 +79,7 @@
            <% }%>
            
            <br/><br/>
-            <form name="fiosDispatch" id="fiosDispatch" method ="post" action="/searchcontroller.portal?type=Notify">
+            <form name="fiosDispatch" id="fiosDispatch" method ="post" action="/searchController?type=Notify">
 			<label class="desc" id="title4" for="Field4">
 				<span style="font-family:'verdana';font-size:12px;"><b>Please enter your Subscription ID/Mobile Number</b></span>
 			</label>
