@@ -87,9 +87,9 @@
 				<input id="txtSubid" name="Field4" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
 			</div>
 			<br/><br/>					
-			<iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="50%" src="/jsp/Maps.HTML"></iframe>
+			<iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="50%" src="/jsp/GetTime.html"></iframe>
 			<br/><br/>
-			<input id="btnTech" name="saveForm" type="Submit"  value="Confirm Request >>" >			
+				
 			<br/><br/>
 			
 			<input type="hidden" id="custName" name="custName" value="Naveen" />
