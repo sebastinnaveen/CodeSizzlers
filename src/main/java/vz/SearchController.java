@@ -103,7 +103,7 @@ public class SearchController extends HttpServlet {
 //        		c.createData("customerNumber", "");
 //        		c.createData("msgTech", "Fios Dispatch Job");
         		       		
-        	
+        	 
         		Content content = new Content();
         		   //POJO class as above for standard message format
         		  // content.addRegId("APA91bERQuEQxDtlMdmdGZ96-A3lRfvn_y4Wt0fE55G5rfmG7M93P9lcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jlt1y5z_l1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");

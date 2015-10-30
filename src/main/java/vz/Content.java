@@ -10,7 +10,7 @@ public class Content implements Serializable {
 
 public List<String> registration_ids;
 public Map<String,String> data;
-
+ 
 public void addRegId(String regId){
     if(registration_ids == null)
         registration_ids = new LinkedList<String>();
