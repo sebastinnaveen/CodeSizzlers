@@ -145,7 +145,7 @@
                                 <div class="col-lg-6">
                                     <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
                                         <div class="form-group">
-                                            <label>Please enter your Account ID</label>
+                                            <label>Please enter your Account ID/Mobile Number</label>
                                             <input class="form-control">
                                             
                                         </div>

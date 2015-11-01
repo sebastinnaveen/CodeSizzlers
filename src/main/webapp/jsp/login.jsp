@@ -103,14 +103,14 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Easy Installation/Maintanence</div>
+                                    <div class="huge">Fios Dispatch</div>
                                    
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left"><a href="../jsp/dispatch.jsp"><i class="fa fa-table fa-fw"></i>Easy Installation/Maintanence</a></span>
+                                <span class="pull-left"><a href="../jsp/dispatch.jsp"><i class="fa fa-table fa-fw"></i>Fios Dispatch</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -125,7 +125,7 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Easy Plan Swap!</div>
+                                    <div class="huge">Swap Plans!</div>
                                     
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                         <a href="#">
                               <div class="panel-footer">
                                <div class="panel-footer">
-                                <span class="pull-left"><a href="../jsp/SwapPlan.html"><i class="fa fa-table fa-fw"></i>Swap Plan</a></span>
+                                <span class="pull-left"><a href="../jsp/SwapPlan.html"><i class="fa fa-table fa-fw"></i>Swap Plans</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
