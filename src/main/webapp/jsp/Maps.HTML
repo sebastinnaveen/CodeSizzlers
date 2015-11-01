@@ -21,7 +21,8 @@
 	<script>
 
 var marker;
-
+var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var labelIndex = 0;
 function initMap() {
 
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -29,27 +30,50 @@ function initMap() {
 	//State Latitude & Longitude
     center: {lat: 13.0900, lng: 80.2700}
   });
+ 
+   var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Technician Details</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Technician Name:Rober Bob</b>,  <b>Tecnician Availability: 10 Mins</b>'+
+      '</p>'+
+      
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  
 
   var image1 = "green1-dot.png";
   marker = new google.maps.Marker({
     map: map,
     draggable: true,
     animation: google.maps.Animation.DROP,
+    
 	icon : image1,
     position: {lat: 13.0497, lng: 80.2126}
+    
   });
-  marker.addListener('click', toggleBounce);
-  
+  google.maps.event.addListener(marker, 'click', function() {
+  // infowindow.open(map,marker);
+});
+//infowindow.open(map,marker);
   
   marker = new google.maps.Marker({
     map: map,
     draggable: true,			
     animation: google.maps.Animation.DROP,
+    
 	icon : image1,
     position: {lat: 12.9531946, lng: 80.1416008}
   });
-  marker.addListener('click', toggleBounce);
-  
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  //infowindow.open(map,marker);
 }
 
 function clickMap()
@@ -71,7 +95,7 @@ function toggleBounce() {
 
     </script>
 	<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLtx1iYEW18xQTa46fpP_O4VOhBQpy4O8&signed_in=true&callback=initMap">		
+        src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyBLtx1iYEW18xQTa46fpP_O4VOhBQpy4O8&signed_in=true&callback=initMap">		
 		</script>
   </body>
   </html>

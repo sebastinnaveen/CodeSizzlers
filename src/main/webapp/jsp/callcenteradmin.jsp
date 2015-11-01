@@ -1,378 +1,751 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
 <head>
+    <meta charset="UTF-8" />
+    <title>VzCommunicator Admin </title>
+     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+     <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="../assetsadmin/plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assetsadmin/css/main.css" />
+    <link rel="stylesheet" href="../assetsadmin/css/theme.css" />
+    <link rel="stylesheet" href="../assetsadmin/css/MoneAdmin.css" />
+    <link rel="stylesheet" href="../assetsadmin/plugins/Font-Awesome/css/font-awesome.css" />
+    <!--END GLOBAL STYLES -->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Call Center Admin</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Timeline CSS -->
-    <link href="../dist/css/timeline.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- PAGE LEVEL STYLES -->
+    <link href="../assetsadmin/css/layout2.css" rel="stylesheet" />
+       <link href="../assetsadmin/plugins/flot/examples/examples.css" rel="stylesheet" />
+       <link rel="stylesheet" href="../assetsadmin/plugins/timeline/timeline.css" />
+    <!-- END PAGE LEVEL  STYLES -->
+     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
-<body>
+    <!-- END HEAD -->
 
-    <div id="wrapper">
+    <!-- BEGIN BODY -->
+<body class="padTop53 " >
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-               
-            </div>
-            <!-- /.navbar-header -->
+    <!-- MAIN WRAPPER -->
+    <div id="wrap" >
+        
 
-            <ul class="nav navbar-top-links navbar-right">
-               
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
+        <!-- HEADER SECTION -->
+        <div id="top">
+
+            <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
+                <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip" class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu" id="menu-toggle">
+                    <i class="icon-align-justify"></i>
+                </a>
+                <!-- LOGO SECTION -->
+                <header class="navbar-header">
+
+                    <a href="/jsp/callcenteradmin.jsp" class="navbar-brand">
+                    <img src="../assetsadmin/img/logo.png" alt="" width="142" height="142" />
+                        
+                        </a>
+                </header>
+                <!-- END LOGO SECTION -->
+                <ul class="nav navbar-top-links navbar-right">
+
+                    <!-- MESSAGES SECTION -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="label label-success">2</span>    <i class="icon-envelope-alt"></i>&nbsp; <i class="icon-chevron-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                       <strong>John Smith</strong>
+                                        <span class="pull-right text-muted">
+                                            <em>Today</em>
+                                        </span>
+                                    </div>
+                                   
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <strong>Raphel Jonson</strong>
+                                        <span class="pull-right text-muted">
+                                            <em>Yesterday</em>
+                                        </span>
+                                    </div>
+                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                         <br />
+                                        <span class="label label-success"> Moderate </span> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <strong>Chi Ley Suk</strong>
+                                        <span class="pull-right text-muted">
+                                            <em>26 Jan 2014</em>
+                                        </span>
+                                    </div>
+                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                         <br />
+                                        <span class="label label-danger"> Low </span> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>Read All Messages</strong>
+                                    <i class="icon-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <!--END MESSAGES SECTION -->
+
+                    <!--TASK SECTION -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="label label-danger">5</span>   <i class="icon-tasks"></i>&nbsp; <i class="icon-chevron-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-tasks">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Profile </strong>
+                                            <span class="pull-right text-muted">40% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                <span class="sr-only">40% Complete (success)</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Pending Tasks </strong>
+                                            <span class="pull-right text-muted">20% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                <span class="sr-only">20% Complete</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Work Completed </strong>
+                                            <span class="pull-right text-muted">60% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                <span class="sr-only">60% Complete (warning)</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Summary </strong>
+                                            <span class="pull-right text-muted">80% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
-             
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>See All Tasks</strong>
+                                    <i class="icon-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
+                    </li>
+                    <!--END TASK SECTION -->
+
+                    <!--ALERTS SECTION -->
                     
+                    <!-- END ALERTS SECTION -->
+
+                    <!--ADMIN SETTINGS SECTIONS -->
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="icon-user"></i> User Profile </a>
+                            </li>
+                            <li><a href="#"><i class="icon-gear"></i> Settings </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="icon-signout"></i> Logout </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <!--END ADMIN SETTINGS -->
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- END HEADER SECTION -->
+
+
+
+        <!-- MENU SECTION -->
+       <div id="left" >
+            <div class="media user-media well-small">
+                <a class="user-link" href="#">
+                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="../assetsadmin/img/user.gif" />
+                </a>
+                <br />
+                <div class="media-body">
+                    <h5 class="media-heading"> Joe Romlin</h5>
+                    <ul class="list-unstyled user-info">
+                        
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Admin Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Burndown Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                       
-                            </ul>
-                            <!-- /.nav-second-level -->
+                             <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online
+                           
                         </li>
                        
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
+                <br />
             </div>
-            <!-- /.navbar-static-side -->
-        </nav>
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-         
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-8">
-                   
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
+            <ul id="menu" class="collapse">
+
+                
+                <li class="panel active">
+                    <a href="../jsp/callcenteradmin.jsp" >
+                        <i class="icon-table"></i> Dashboard
+	   
                        
-                        <!-- /.panel-heading -->
-                             <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Tickets Queue
+                    </a>                   
+                </li>
+
+
+
+               
+                <li class="panel ">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                        <i class="icon-pencil"></i> Complaints
+	   
+                        <span class="pull-right">
+                            <i class="icon-angle-left"></i>
+                        </span>
+                          &nbsp; <span class="label label-success">5</span>&nbsp;
+                    </a>
+                    <ul class="collapse" id="form-nav">
+                        <li class=""><a href="forms_general.html"><i class="icon-angle-right"></i> General </a></li>
+                        <li class=""><a href="forms_advance.html"><i class="icon-angle-right"></i> Advance </a></li>
+                        <li class=""><a href="forms_validation.html"><i class="icon-angle-right"></i> Validation </a></li>
+                        <li class=""><a href="forms_fileupload.html"><i class="icon-angle-right"></i> FileUpload </a></li>
+                        <li class=""><a href="forms_editors.html"><i class="icon-angle-right"></i> WYSIWYG / Editor </a></li>
+                    </ul>
+                </li>
+
+                <li class="panel">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#pagesr-nav">
+                        <i class="icon-table"></i> Technicians Availability
+	   
+                        <span class="pull-right">
+                            <i class="icon-angle-left"></i>
+                        </span>
+                          &nbsp; <span class="label label-info">6</span>&nbsp;
+                    </a>
+                    <ul class="collapse" id="pagesr-nav">
+                        <li><a href="pages_calendar.html"><i class="icon-angle-right"></i> Calendar </a></li>
+                        <li><a href="pages_timeline.html"><i class="icon-angle-right"></i> Timeline </a></li>
+                        <li><a href="pages_social.html"><i class="icon-angle-right"></i> Social </a></li>
+                        <li><a href="pages_pricing.html"><i class="icon-angle-right"></i> Pricing </a></li>
+                        <li><a href="pages_offline.html"><i class="icon-angle-right"></i> Offline </a></li>
+                        <li><a href="pages_uc.html"><i class="icon-angle-right"></i> Under Construction </a></li>
+                    </ul>
+                </li>
+               
+
+               
+               
+              
+
+
+                
+               
+            </ul>
+
+        </div>
+        <!--END MENU SECTION -->
+
+
+
+        <!--PAGE CONTENT -->
+        <div id="content">
+             
+            <div class="inner" style="min-height: 700px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1> Admin Dashboard </h1>
+                    </div>
+                </div>
+                  <hr />
+                 <!--BLOCK SECTION -->
+                 <div class="row">
+                    <div class="col-lg-12">
+                        <div style="text-align: center;">
+                           
+                            <a class="quick-btn" href="#">
+                                <i class="icon-check icon-2x"></i>
+                                <span> Products</span>
+                                <span class="label label-danger">2</span>
+                            </a>
+
+                            <a class="quick-btn" href="#">
+                                <i class="icon-envelope icon-2x"></i>
+                                <span>Messages</span>
+                                <span class="label label-success">456</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-signal icon-2x"></i>
+                                <span>Profit</span>
+                                <span class="label label-warning">+25</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-external-link icon-2x"></i>
+                                <span>value</span>
+                                <span class="label btn-metis-2">3.14159265</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-lemon icon-2x"></i>
+                                <span>tasks</span>
+                                <span class="label btn-metis-4">107</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-bolt icon-2x"></i>
+                                <span>Tickets</span>
+                                <span class="label label-default">20</span>
+                            </a>
+
+                            
+                            
                         </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+                    </div>
+
+                </div>
+                  <!--END BLOCK SECTION -->
+                <hr />
+                   <!-- CHART & CHAT  SECTION -->
+                 <div class="row">
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Real Time Traffic
+                            </div>
+
+                                                
+			<div class="demo-container">
+			<div id="placeholderRT" class="demo-placeholder"></div>
+		</div>
+
+                        </div>
+
+                    </div>
+
+                    
+                     <div class="col-lg-4">
+
+                        <div class="chat-panel panel panel-primary">
+                            <div class="panel-heading">
+                                <i class="icon-comments"></i>
+                               
+                            <div class="btn-group pull-right">
+                                <button type="button" data-toggle="dropdown">
+                                    <i class="icon-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu slidedown">
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-refresh"></i> Refresh
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class=" icon-comment"></i> Available
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-time"></i> Busy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-tint"></i> Away
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-signout"></i> Sign Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+
+                       
+                 <!--END CHAT & CHAT SECTION -->
+                
+                
+
+                
+
+                 <!--  STACKING CHART  SECTION   -->
+                <div class="row">
+                   <div class="col-lg-12">
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                            Sales   Stacking
+                            </div>
+
+                            <div class="panel-body">
+                              
+			<div class="demo-container">
+			<div id="placeholderStack" class="demo-placeholder"></div>
+		</div>
+                                <p class="stackControls">
+			<button class="btn btn-primary" >With stacking</button>
+			<button class="btn btn-primary">Without stacking</button>
+		</p>
+
+		<p class="graphControls">
+			<button class="btn btn-primary">Bars</button>
+			<button class="btn btn-primary">Lines</button>
+			<button class="btn btn-primary">Lines with steps</button>
+		</p>
+		</div>
+		
+                            </div>
+                    </div>
+                     
+                </div>
+                 <!--END STACKING CHART SCETION  -->
+
+                 <!--TABLE, PANEL, ACCORDION AND MODAL  -->
+                          <div class="row">
+                    <div class="col-lg-6">
+                        <div class="box">
+                            <header>
+                                <h5>Simple Table</h5>
+                                <div class="toolbar">
+                                    <div class="btn-group">
+                                        <a href="#sortableTable" data-toggle="collapse" class="btn btn-default btn-sm accordion-toggle minimize-box">
+                                            <i class="icon-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </header>
+                            <div id="sortableTable" class="body collapse in">
+                                <table class="table table-bordered sortableTable responsive-table">
                                     <thead>
                                         <tr>
-                                           <th>Ticket Id</th>
-                                            <th>Ticket Desc </th>
-                                            <th>Ticket Priority </th>
-                                            <th>Customer Name</th>
-                                            <th>Ticket Requested Date</th>
-                                            <th>Assigned To</th>
-                                             <th>Status</th>
+                                            <th>#<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>First Name<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Last Name<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Score<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>1510291100</td>
-                                            <td>We recently ordered FIOS cable, but (1) Verizon apparently had no record of who the installer was (the one who spent several hours on my property and inside my house), then (2) it was clear that the installed box was defective (warned it was overheating and wouldn't record). When one of us managed to get through to a "live"customer representative, that person neither knew who the installer was nor would dispatch anyone else to deal with the problem -- about an installation the day before! When the installer later called for followup, he indicated he couldn't give us his phone number and he couldn't come back out to replace the defective unit</td>
-                                            <td>HIGH</td>
-                                            <td>WaveDad</td>
-                                            <td>28/Oct/2015</td>
-                                            <td class="center">Robert Bob</td>
-                                            <td ><div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                            <span class="sr-only">Complete</span>
-                                        </div></td>
+
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Jill</td>
+                                            <td>Smith</td>
+                                            <td>50</td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>1510291101</td>
-                                            <td>I've had Verizon in early 2000s when FiOS was first available in my area, but the speed sucks so I was better off switching back to dial-up. 
 
- 
-
-Many years have passed so I thought I would try Verizon again as I've heard good things about them. I signed up for the bundle service in 2012, and it's been an internet living hell when you're paying $140 every month and had to struggle daily to get connected onto the slow internet that takes 3minutes to load Google search page if you're lucky (my plan is 50/25). 
-
- 
-
-I've had no internet connectivity on the 2nd floor of my house and I've contacted Verizon many times about it. 
-
-First time I'm told the router they provided could cover 100K range, so the problem might be the internet speed. I naively believed them and upgraded my service and got myself locked for another 2year nightmare
-</td>
-                                            <td>HIGH</td>
-                                            <td>thelalu</td>
-                                            <td>01/Sep/2015</td>
-                                            <td class="center">Christopher</td>
-                                            <td ><div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">Complete</span>
-                                        </div></td>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Eve</td>
+                                            <td>Jackson</td>
+                                            <td>94</td>
                                         </tr>
-                                        <tr class="odd gradeA">
-                                            <td>1510291102</td>
-                                            <td>I've had FIOS for 6 months.  Billing and Customer services is the worst.  Not even sure if savings are an advantage - given the time you have to spend resolving billing issues.  I've spent 13hrs - it's like a full time job.  I am considering going back to Comcast and using Vonage.  Unfortunately Verizon gets you with at $175 penalty for cancelling within a year.  6months and counting.  Keep you phone and TV with seperate companies</td>
-                                            <td>HIGH</td>
-                                            <td>WaveDad</td>
-                                            <td>02/Sep/2015</td>
-                                            <td class="center">Jones</td>
-                                            <td ><div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">20% Complete (success)</span>
-                                        </div></td>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                            <td>80</td>
                                         </tr>
-                                        <tr class="even gradeA">
-                                            <td>1510291103</td>
-                                            <td>I've had Verizon for almost 4 years and I've had the Fios Bundle for over 2.  In October of 2009, I went to buy a new cell phone at a Verizon store and one of the representatives, Gilbert, for Fios started talking to me about my plan and telling me he can get it down cheaper and I could add HBO/Cinemax and I would only be adding like $10 more to my bill.  He did all the calculations printed out an invoice and noted this:
 
- 
-
-I would pay:
-
-$146.96 before taxes and fees for 6 months.
-
-THEN
-
-$166.96 for months 7-12.
-
-THEN
-
-$176.96 for the whole second year.
-</td>
-                                            <td>HIGH</td>
-                                            <td>Taken727</td>
-                                            <td>03/Sep/2015</td>
-                                            <td class="center">Kimberly</td>
-                                            <td ><div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div></td>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Adam</td>
+                                            <td>Johnson</td>
+                                            <td>67</td>
                                         </tr>
-                                        <tr class="odd gradeA">
-                                            <td>1510291104</td>
-                                            <td>I have been on the phone with multiple different reps from multiple different departments over the past 5 days, all of which total well over 10+ hours! I have been told every day that my services were going to be restored, I also was told I was starting the 24 mth plan with $300 bonus gift card. Each day my services are still not restored, and when I call I am told something completely different that what I was told by the previous representative! I have spent countless hours only trying to get my services turned back on</td>
-                                            <td>HIGH</td>
-                                            <td>ajwalas</td>
-                                            <td>04/Sep/2015</td>
-                                            <td class="center">Joseph SLota</td>
-                                            <td ><div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">60% Complete (success)</span>
-                                        </div></td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>1510291100</td>
-                                            <td>I'm looking for an e-mail address or physical mail (aka "snail mail") address I can use to submit a complaint regarding Verizon Online's (DSL in my case) horrid customer service.  The Verizon website does not provide any useful information on this.  I want to be sure that someone beyond the poorly trained foreign sub-contractors are aware of what poor service they are providing.  There seems to be no sense of accountability or concern when customers are not happy.</td>
-                                            <td>HIGH</td>
-                                            <td>dbatty90293</td>
-                                            <td>05/Sep/2015</td>
-                                            <td class="center">Jim</td>
-                                            <td ><div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">80% Complete (success)</span>
-                                        </div></td>
-                                        </tr>
-                                       
+
+
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- /.table-responsive -->
-                          
                         </div>
-                        <!-- /.panel-body -->
+                        <div class="panel panel-primary">
+                            <div class="panel-heading ">
+                                Collapsible Accordion Panel Group
+                            </div>
+                            <div class="panel-body">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Collapsible Group Item #1</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                Lorem ipsum dolor sit amet, luaute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Collapsible Group Item #3</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-                        <!-- /.panel-body -->
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Primary Panel
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Context Classes
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="success">
+                                                <td>1</td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr class="info">
+                                                <td>2</td>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr class="warning">
+                                                <td>3</td>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                            <tr class="danger">
+                                                <td>4</td>
+                                                <td>John</td>
+                                                <td>Smith</td>
+                                                <td>@jsmith</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Modal Example
+                            </div>
+                            <div class="panel-body">
+                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                    Launch Demo Modal
+                                </button>
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.panel -->
-               
-                    <!-- /.panel -->
+
                 </div>
-                <!-- /.col-lg-8 -->
+                 <!--TABLE, PANEL, ACCORDION AND MODAL  -->
+
                 
-                <!-- /.col-lg-4 -->
             </div>
-            <!-- /.row -->
+
         </div>
-        <!-- /#page-wrapper -->
+        <!--END PAGE CONTENT -->
 
+         <!-- RIGHT STRIP  SECTION -->
+        <div id="right">
+
+            
+            <div class="well well-small">
+                <ul class="list-unstyled">
+                    <li>Visitor &nbsp; : <span>23,000</span></li>
+                    <li>Users &nbsp; : <span>53,000</span></li>
+                    <li>Registrations &nbsp; : <span>3,000</span></li>
+                </ul>
+            </div>
+            <div class="well well-small">
+                <button class="btn btn-block"> Help </button>
+                <button class="btn btn-primary btn-block"> Tickets</button>
+                <button class="btn btn-info btn-block"> New </button>
+                <button class="btn btn-success btn-block"> Users </button>
+                <button class="btn btn-danger btn-block"> Profit </button>
+                <button class="btn btn-warning btn-block"> Sales </button>
+                <button class="btn btn-inverse btn-block"> Stock </button>
+            </div>
+            <div class="well well-small">
+                <span>Profit</span><span class="pull-right"><small>20%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                </div>
+                <span>Sales</span><span class="pull-right"><small>40%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                </div>
+                <span>Pending</span><span class="pull-right"><small>60%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                </div>
+                <span>Summary</span><span class="pull-right"><small>80%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                </div>
+            </div>
+          
+            
+         
+
+        </div>
+         <!-- END RIGHT STRIP  SECTION -->
     </div>
-    <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!--END MAIN WRAPPER -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../bower_components/raphael/raphael-min.js"></script>
-    <script src="../bower_components/morrisjs/morris.min.js"></script>
-    <script src="../js/morris-data.js"></script>
+    <!-- GLOBAL SCRIPTS -->
+    <script src="../assetsadmin/plugins/jquery-2.0.3.min.js"></script>
+     <script src="../assetsadmin/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assetsadmin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!-- END GLOBAL SCRIPTS -->
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script src="../assetsadmin/plugins/flot/jquery.flot.js"></script>
+    <script src="../assetsadmin/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="../assetsadmin/plugins/flot/jquery.flot.time.js"></script>
+     <script  src="../assetsadmin/plugins/flot/jquery.flot.stack.js"></script>
+    <script src="../assetsadmin/js/for_index.js"></script>
+   
+    <!-- END PAGE LEVEL SCRIPTS -->
+
 
 </body>
 
+    <!-- END BODY -->
 </html>

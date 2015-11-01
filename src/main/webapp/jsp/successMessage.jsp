@@ -71,12 +71,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             
-            <%
-            System.out.println("success---->"+request.getAttribute("success"));
-            if(request.getAttribute("success")!=null){%>
-            <label id="lblMessage"  ><span style="font-family:'verdana';font-size:12px;"><b>Thanks for submitting the Request. Your issue will get resolved within 24 Hrs.</b></span></label>
-           <br/><br/>
-           <% }%>
+           
            
            <br/><br/>
             <form name="fiosDispatch" id="fiosDispatch" method ="post" action="/searchController?type=Notify">
@@ -87,7 +82,7 @@
 				<input id="txtSubid" name="Field4" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
 			</div>
 			<br/><br/>					
-			<iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="50%" src="/jsp/GetTime.html"></iframe>
+			<iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="50%" src="../jsp/GetTime.html"></iframe>
 			<br/><br/>
 				
 			<br/><br/>

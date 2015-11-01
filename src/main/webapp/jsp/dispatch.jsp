@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Fios Dispatch</title>
-
+<html>
+  <head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="https://hpneo.github.io/gmaps/gmaps.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <script>
+<link rel="stylesheet" type="text/css" href="examples.css" />
+    <meta charset="utf-8">
+    <title>VDSI Hackathon</title>    
+  </head>
+  <body>    
+	<script>
 		localStorage.clear();
 
 		var Tech1 = {};
@@ -57,139 +61,138 @@
 			   alert('Please enter the Subscription ID');
 			   document.getElementById("txtSubid").focus();
 			   return false;
-			}			
+			}	
 			
+			if(document.getElementById("lblMessage").style.display == 'none')
+			{				
+				setTimeout(loadiFrame(), 5000);
+			}
+			
+			/*if(document.getElementById("iframeMap").style.display == 'none')
+			{
 				document.getElementById("iframeMap").style.display = 'block';
-				
+				document.getElementById("iframeMap").src = "Maps.HTML";
+			}	*/		
 		}
 		
+		function mapLoadFunction(id)
+		{ //alert(id);
+			//document.getElementById("iframeMap").src = "GetTime.html";
+			if(id == 'Fios Tv'){
+			document.getElementById("map1").style.display = 'block';
+			document.getElementById("map2").style.display = 'none';
+			}
+			else if(id == 'Fios Phone'){
+			document.getElementById("map2").style.display = 'block';
+			document.getElementById("map1").style.display = 'none';
+			}
+			
+			
+		}
 		
 	</script>
-	
-	
-	<script>
+    
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">VzCommunicator</a>
+            </div>
+            <!-- /.navbar-header -->
 
-var marker;
+           
+            <!-- /.navbar-top-links -->
 
-function initMap() {
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-	//State Latitude & Longitude
-    center: {lat: 13.0900, lng: 80.2700}
-  });
-
-  var image1 = "green1-dot.png";
-  marker = new google.maps.Marker({
-    map: map,
-    draggable: true,
-    animation: google.maps.Animation.DROP,
-	icon : image1,
-    position: {lat: 13.0497, lng: 80.2126}
-  });
-  marker.addListener('click', toggleBounce);
-  
-  
-  marker = new google.maps.Marker({
-    map: map,
-    draggable: true,			
-    animation: google.maps.Animation.DROP,
-	icon : image1,
-    position: {lat: 12.9531946, lng: 80.1416008}
-  });
-  marker.addListener('click', toggleBounce);
-  
-}
-
-function clickMap()
-{
-	
-}
-
-function toggleBounce() {
-  
-  if (marker.getAnimation() !== null) {
-    marker.setAnimation(null);
-  } else {
-    marker.setAnimation(google.maps.Animation.BOUNCE);
-  }  
-}
-
-    </script>
-
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        
-
-        <div id="page-wrapper">
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                       <!--  <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            /input-group 
+                        </li>-->
+                        <li>
+                            <a href="/jsp/newRequest.jsp"><i class="fa fa-table fa-fw"></i> New Request</a>
+                        </li>
+                        <li>
+                            <a href="/jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+	  <div id="page-wrapper">
+             <div>                
+                  <h1>Vz Communicator - FIOS  Request</h1>                
+                <!-- /.col-lg-12 -->
+            </div>
             
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Vz Communicator - FIOS Dispatch
-                        </div>
-                        <div class="panel-body">
+			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="/vz/searchController?type=Notify">
                                         <div class="form-group">
-                                            <label>Please enter your Subscription ID/Mobile Number</label>
-                                            <input class="form-control" id="txtSubid">
-                                            <button type="submit" class="btn btn-default" onclick="return clickMap();">Locate Technician</button>
+                                            <label>Please enter your Account ID/Mobile Number</label>
+                                            <input class="form-control">
+                                            
                                         </div>
-                                        
-                                        <input type="hidden" id="custName" name="custName" value="Naveen" />
-	<input type="hidden" id="custLocation" name="custLocation" value="Tambaram,india,chennai" />
-	<input type="hidden" id="custLocation" name="custNumber" value="9840384885" />
-                                        
+                                          <div class="form-group">
+                                            <label>Installation/Maintanence</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Installation
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Maintanence
+                                            </label>
+                                            
                                         </div>
-                                      
-                                        
-                                            <iframe border="0" scroll="no" id="iframeMap" height="400px" width="50%" >
-                                       
-                                        <div id="map"></div>
-                                        </iframe>
-                                       
+                                          <div class="form-group">
+                                            <label>Products Category</label>
+                                            <select multiple class="form-control" onchange="mapLoadFunction(this.value)">
+                                                <option >Fios Tv</option>
+                                                <option >Fios Phone</option>
+                                                <option>Fios Internet</option>
+                                                <option>Wireless</option>
+                                                <option>Wireline</option>
+                                            </select>
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Comments</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group" id="map1" style="display:none">
+                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/Maps.HTML"></iframe>
+                                        </div>
+                                        <div class="form-group" id="map2" style="display:none">
+                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/Maps1.html"></iframe>
+                                        </div>
+                                               <button type="submit" class="btn btn-default">Confirm Request</button>
+                                        <input type="hidden" id="customerName" name="customerName" value="Naveen" />
+	<input type="hidden" id="customerLocation" name="customerLocation" value="Tambaram,india,chennai" />
+	<input type="hidden" id="customerNumber" name="customerNumber" value="9840384885" />
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 
-                                <!-- /.col-lg-6 (nested) -->
                             </div>
                             <!-- /.row (nested) -->
                         </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
+	
+  </body>
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
-</body>
-
+	
 </html>
