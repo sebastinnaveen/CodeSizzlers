@@ -110,7 +110,7 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left"><a href="/vz/jsp/dispatch.jsp"><i class="fa fa-table fa-fw"></i>Easy Installation/Maintanence</a></span>
+                                <span class="pull-left"><a href="../jsp/dispatch.jsp"><i class="fa fa-table fa-fw"></i>Easy Installation/Maintanence</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
