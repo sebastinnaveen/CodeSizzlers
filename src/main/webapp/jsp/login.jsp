@@ -73,7 +73,7 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="/jsp/userDashboard.jsp.jsp"><i class="fa fa-table fa-fw"></i> VzCommunicator</a>
+                            <a href="/jsp/userDashboard.jsp"><i class="fa fa-table fa-fw"></i> VzCommunicator</a>
                         </li>
                         <li>
                             <a href="/jsp/userRegistration.jsp"><i class="fa fa-dashboard fa-fw"></i>New User Registration</a>
@@ -131,10 +131,12 @@
                             </div>
                         </div>
                         <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">Easy Plan Swap</span>
+                              <div class="panel-footer">
+                               <div class="panel-footer">
+                                <span class="pull-left"><a href="../jsp/SwapPlan.html"><i class="fa fa-table fa-fw"></i>Swap Plan</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
+                            </div>
                             </div>
                         </a>
                     </div>
@@ -157,9 +159,11 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">Payments</span>
+                               <div class="panel-footer">
+                                <span class="pull-left"><a href="../jsp/payments.jsp"><i class="fa fa-table fa-fw"></i>Payments</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
+                            </div>
                             </div>
                         </a>
                     </div>
@@ -179,9 +183,11 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">Complaints</span>
+                                <div class="panel-footer">
+                                <span class="pull-left"><a href="../jsp/Complaints.html"><i class="fa fa-table fa-fw"></i>Complaints</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
+                            </div>
                             </div>
                         </a>
                     </div>

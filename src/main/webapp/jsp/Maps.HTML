@@ -24,7 +24,8 @@ var marker;
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var labelIndex = 0;
 function initMap() {
-
+var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
 	//State Latitude & Longitude
@@ -58,7 +59,7 @@ function initMap() {
     
   });
   google.maps.event.addListener(marker, 'click', function() {
-  // infowindow.open(map,marker);
+   infowindow.open(map,marker);
 });
 //infowindow.open(map,marker);
   
@@ -72,6 +73,7 @@ function initMap() {
   });
   marker.addListener('click', function() {
     infowindow.open(map, marker);
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
   });
   //infowindow.open(map,marker);
 }
@@ -91,6 +93,20 @@ function toggleBounce() {
   } else {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }  
+  
+  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: 'Vadapalani',
+    destination: 'Koyembedu',
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
 }
 
     </script>

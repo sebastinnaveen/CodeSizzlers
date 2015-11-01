@@ -122,10 +122,10 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="/jsp/newRequest.jsp"><i class="fa fa-table fa-fw"></i> New Request</a>
+                            <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="/jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
+                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
                         </li>
                         
                     </ul>
@@ -143,9 +143,9 @@
 			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="/searchController?type=Notify">
+                                    <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
                                         <div class="form-group">
-                                            <label>Please enter your Account ID/Mobile Number</label>
+                                            <label>Please enter your Account ID</label>
                                             <input class="form-control">
                                             
                                         </div>
@@ -165,8 +165,7 @@
                                                 <option >Fios Tv</option>
                                                 <option >Fios Phone</option>
                                                 <option>Fios Internet</option>
-                                                <option>Wireless</option>
-                                                <option>Wireline</option>
+                                               
                                             </select>
                                         </div>
                                          <div class="form-group">

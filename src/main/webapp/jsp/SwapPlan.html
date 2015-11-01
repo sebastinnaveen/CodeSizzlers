@@ -23,8 +23,30 @@
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
+<style type="text/css">
+.lp-section-wrap.pick-size {padding-top: 0;}
+.lp-section-wrap.pick-size .col12-box {padding-top: 0;}
+.lp-section-wrap.pick-size .promo-h3 {margin-top: 0;}
+.lp-section-wrap.pick-size .size-pricing {padding: 90px 0 54px; margin: 0; list-style: none; display: inline-block; font-family:"Neue Haas Grotesk Text",Helvetica,Arial,sans-serif; width: 100%;}
+.lp-section-wrap.pick-size .size-pricing .plan-size {float: left; text-align: center; width: 20%;}
+.lp-section-wrap.pick-size .size-pricing .plan-size-letter {background: #abe0f9; border-radius: 50%; width: 138px; height: 138px; font-size: 54px; font-size: 5.4rem; line-height: 13.8rem; font-weight: 700; display: block; margin: 0 auto; position: relative;}
+.lp-section-wrap.pick-size .size-pricing .plan-size-letter::after {content: ''; position: absolute; bottom: 0; right: -16px; width: 55px; height: 228px; background: url(https://ss7.vzw.com/is/image/VerizonWireless/illustration-four-ice-cream-cones-bettermatters-v2?$defaultScale$&scl=2.25) no-repeat;}
+
+.lp-section-wrap.pick-size .size-pricing .plan-size.small .plan-size-letter::after {background-position: 0px -2px;}
+.lp-section-wrap.pick-size .size-pricing .plan-size.medium .plan-size-letter::after {background-position: -73px -2px;}
+.lp-section-wrap.pick-size .size-pricing .plan-size.large .plan-size-letter::after {background-position: -148px -2px;}
+.lp-section-wrap.pick-size .size-pricing .plan-size.xlarge .plan-size-letter::after {background-position: -218px -2px;}
+.lp-section-wrap.pick-size .size-pricing .plan-size.xxlarge .plan-size-letter::after {background-position: -290px -2px;}
+
+.lp-section-wrap.pick-size .size-pricing .plan-amount-price {display: block; margin: 18px 0 0; font-weight: 700; font-size: 24px; font-size: 2.4rem;}
+.lp-section-wrap.pick-size .size-pricing .plan-best-for-label {display: block; font-size: 16px; font-size: 1.6rem; font-weight: 700; margin: 24px 0 6px;}
+.lp-section-wrap.pick-size .size-pricing .plan-best-for-list {display: block; list-style: none; padding: 0; margin: 18px 0 0; line-height: 1.2em; font-size: 16px; font-size: 1.6rem;}
+.lp-section-wrap.pick-size .size-pricing .plan-best-for-list li {padding: 4px 0;}
+
+.lp-section-wrap.pick-size .sub-h1 {margin-bottom: 0;}
+</style>
     <meta charset="utf-8">
-    <title>VDSI Hackathon</title>    
+    <title>Verizon SwapPlan</title>    
   </head>
   <body>    
 	<script>
@@ -100,7 +122,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator</a>
+                <a class="navbar-brand" href="index.html">Verizon SwapPlan</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -122,7 +144,7 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="../jsp/newRequest.jsp"><i class="fa fa-table fa-fw"></i> New Request</a>
+                            <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
@@ -136,53 +158,48 @@
         </nav>
 	  <div id="page-wrapper">
              <div>                
-                  <h1>Vz Communicator - FIOS  Request</h1>                
+                  <h1>Verizon - SwapPlan</h1>                
                 <!-- /.col-lg-12 -->
             </div>
             
 			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
+                                   
                                         <div class="form-group">
-                                            <label>Please enter your Account ID</label>
-                                            <input class="form-control">
+                                           <div class="marq-slide-wrap col12-box">
+		<div class="marq-slide-content align-center">
+			<header>
+				<h1 class="promo-h1 vz-red-text">One plan. Pick a size. <br>Simple.</h1>
+				<p class="vz-black-text">Introducing XXL. 18GB / $100.</p>
+			</header>
+		</div>
+	</div>
                                             
                                         </div>
                                           <div class="form-group">
-                                            <label>Installation/Maintanence</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Installation
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Maintanence
-                                            </label>
-                                            
+                                           <ul class="size-pricing">
+	<li class="plan-size small"><span class="plan-size-letter" title="Small">S</span> <span class="plan-amount-price vz-red-text">1<abbr title="Gigabyte">GB</abbr> / $30</span>
+	</li>
+	
+	<li class="plan-size medium"><span class="plan-size-letter" title="Medium">M</span> <span class="plan-amount-price vz-red-text">3<abbr title="Gigabytes">GB</abbr> / $45</span>
+	</li>
+
+	<li class="plan-size large"><span class="plan-size-letter" title="Large">L</span> <span class="plan-amount-price vz-red-text">6<abbr title="Gigabytes">GB</abbr> / $60</span>
+	</li>
+
+	<li class="plan-size xlarge"><span class="plan-size-letter" title="Extra Large">XL</span> <span class="plan-amount-price vz-red-text">12<abbr title="Gigabytes">GB</abbr> / $80</span>
+	</li>
+
+	<li class="plan-size xxlarge"><span class="plan-size-letter" title="Extra Extra Large">XXL</span> <span class="plan-amount-price vz-red-text">18<abbr title="Gigabytes">GB</abbr> / $100</span>
+	</li>
+</ul>
+<p class="sub-h1 vz-black-text">All sizes include unlimited talk and text.</p>
+
+<p class="disclaimer-text">Plan cost per month plus $20/month for each smartphone line. Taxes/fees apply.</p>
                                         </div>
-                                          <div class="form-group">
-                                            <label>Products Category</label>
-                                            <select multiple class="form-control" onchange="mapLoadFunction(this.value)">
-                                                <option >Fios Tv</option>
-                                                <option >Fios Phone</option>
-                                                <option>Fios Internet</option>
-                                              
-                                            </select>
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Comments</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group" id="map1" style="display:none">
-                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/Maps.HTML"></iframe>
-                                        </div>
-                                        <div class="form-group" id="map2" style="display:none">
-                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/Maps1.html"></iframe>
-                                        </div>
-                                               <button type="submit" class="btn btn-default">Confirm Request</button>
-                                        <input type="hidden" id="customerName" name="customerName" value="Naveen" />
-	<input type="hidden" id="customerLocation" name="customerLocation" value="Tambaram,india,chennai" />
-	<input type="hidden" id="customerNumber" name="customerNumber" value="9840384885" />
-                                    </form>
+                                         
+                                  
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 
