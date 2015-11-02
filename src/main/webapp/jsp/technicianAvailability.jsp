@@ -140,7 +140,7 @@
 	  <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Fios Dispatch - Requests</h1>
+                    <h1 class="page-header">Technician Availability</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -149,111 +149,67 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Fios Dispatch
+                            
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <table border="1" width="100%">
-		<tr bgcolor="Grey">
-			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Request Id
-			</td>
-			<td width="40%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Request
-			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Request Date
-			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Status
-			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Assigned Date
-			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
+                            
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+		<tr>
+			<td width="40%" align="center" style="font-face:verdana;font-size:18px;">
 				Technician Name
+			</td>			
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				Availability Status
 			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				Speciality
+			</td>			
 		</tr>
 		<tr>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				1236785
-			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Smith, FL, 213-867-8367
+				Peter
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				10/22/2015
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				In Work
 			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				<a href="#">Assign</a>
-			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				
-			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
-				
-			</td>
+			<td width="30%" style="font-face:verdana;font-size:15px;">
+				Fios TV, Fios Internet
+			</td>			
 		</tr>
 		<tr>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				1236757
-			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Rahul, TX, 213-867-9367
+				Sathish Madhavan
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				03/22/2015
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				Available
 			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				Assigned
-			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				03/22/2015
-			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
-				Williams
-			</td>
+			<td width="30%" style="font-face:verdana;font-size:15px;">
+				Fios TV, Fios Internet, Fios Landline
+			</td>			
 		</tr>
 		<tr>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				1236745
-			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Peter, NY, 213-867-8367
+				Ramkumar Narasimhachary
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				04/23/2015
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				Available
 			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				<a href="#">Assign</a>
-			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				
-			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
-				
-			</td>
+			<td width="30%" style="font-face:verdana;font-size:15px;">
+				Fios TV, Fios Landline
+			</td>			
 		</tr>
 		<tr>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				1236785
-			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Jack, NJ, 213-867-8367
-			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				05/21/2015
-			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				Assigned
-			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				05/23/2015
-			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
 				Gerald
 			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				Offline
+			</td>
+			<td width="30%" style="font-face:verdana;font-size:15px;">
+				All Fios Services
+			</td>			
 		</tr>
 	</table>
                             </div>

@@ -89,7 +89,10 @@
 			
 			
 		}
-		
+		function loadiFrame()
+		{
+		document.getElementById("map1").style.display = 'block';
+		}
 	</script>
     
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -122,10 +125,10 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="../jsp/newRequest.jsp"><i class="fa fa-table fa-fw"></i> New Request</a>
+                            <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
+                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Fios Dispatch</a>
                         </li>
                         
                     </ul>
@@ -145,7 +148,7 @@
                                 <div class="col-lg-6">
                                     <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
                                    
-                                        <div class="form-group" id="map1" >
+                                        <div class="form-group" id="map1" style='display:none' >
                                            <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/GetTime.html"></iframe>
                                         </div>
                                         

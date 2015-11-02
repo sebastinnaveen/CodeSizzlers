@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator</a>
+                <a class="navbar-brand" href="index.html">VzCommunicator - Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -73,12 +73,11 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="/jsp/userDashboard.jsp.jsp"><i class="fa fa-table fa-fw"></i> VzCommunicator</a>
-                        </li>
+                            <a href="/jsp/userDashboard.jsp"><i class="fa fa-table fa-fw"></i> VzCommunicator</a>
+                        </li>        
                         <li>
-                            <a href="/jsp/userRegistration.jsp"><i class="fa fa-dashboard fa-fw"></i>New User Registration</a>
-                        </li>
-                        
+                            <a href="../jsp/callcenteradmin.jsp"><i class="fa fa-table fa-fw"></i> Admin</a>
+                        </li>                                          
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -89,7 +88,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Vz Communicator Dashboard</h1>
+                    <h1 class="page-header">Dashboard</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -103,14 +102,14 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Easy Installation/Maintanence</div>
+                                    <div class="huge">Fios Dispatch</div>
                                    
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left"><a href="../jsp/dispatch.jsp"><i class="fa fa-table fa-fw"></i>Easy Installation/Maintanence</a></span>
+                                <span class="pull-left"><a href="../jsp/dispatch.jsp"><i class="fa fa-table fa-fw"></i>Fios Dispatch</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -131,10 +130,12 @@
                             </div>
                         </div>
                         <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">Easy Plan Swap</span>
+                              <div class="panel-footer">
+                               <div class="panel-footer">
+                                <span class="pull-left"><a href="../jsp/SwapPlan.html"><i class="fa fa-table fa-fw"></i>Easy Plan Swap</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
+                            </div>
                             </div>
                         </a>
                     </div>
@@ -142,28 +143,7 @@
               
                </div>
                <div class="row">
-              <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">Payments</div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">Payments</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+              
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
@@ -179,9 +159,35 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">Complaints</span>
+                                <div class="panel-footer">
+                                <span class="pull-left"><a href="../jsp/Complaints.html"><i class="fa fa-table fa-fw"></i>Complaints</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">Quick Pay</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                               <div class="panel-footer">
+                                <span class="pull-left"><a href="../jsp/payments.jsp"><i class="fa fa-table fa-fw"></i>Quick Pay</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
                             </div>
                         </a>
                     </div>
