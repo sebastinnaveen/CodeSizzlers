@@ -76,7 +76,7 @@
                             <a href="/jsp/userDashboard.jsp"><i class="fa fa-table fa-fw"></i> VzCommunicator</a>
                         </li>        
                         <li>
-                            <a href="/jsp/callcenteradmin.jsp"><i class="fa fa-table fa-fw"></i> Admin</a>
+                            <a href="../jsp/callcenteradmin.jsp"><i class="fa fa-table fa-fw"></i> Admin</a>
                         </li>                                          
                     </ul>
                 </div>

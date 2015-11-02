@@ -24,7 +24,7 @@
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
     <meta charset="utf-8">
-    <title>Verizon Complaints</title>    
+    <title>VzCommunicator - Complaints</title>    
   </head>
   <body>    
 	<script>
@@ -149,7 +149,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Fios Dispatch
+                            
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -163,7 +163,7 @@
 				Request
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Request Category
+				Category
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
 				Request Date

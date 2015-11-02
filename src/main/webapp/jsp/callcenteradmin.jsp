@@ -140,7 +140,7 @@
 	  <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tickets</h1>
+                    <h1 class="page-header">Fios Dispatch Requests</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -149,7 +149,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Fios Dispatch
+                            
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -160,7 +160,10 @@
 				Request Id
 			</td>
 			<td width="40%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
-				Request
+				Comments
+			</td>
+			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
+				Request Type
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
 				Request Date
@@ -180,7 +183,10 @@
 				1236785
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Smith, FL, 213-867-8367
+				Set up box not working - Posted by Smith, FL, 213-867-8367
+			</td>
+			<td width="10%" style="font-face:verdana;font-size:15px;">
+				Maintenance
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				10/22/2015
@@ -200,7 +206,10 @@
 				1236757
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Rahul, TX, 213-867-9367
+				Need to configure Fios TV in my location - Posted by Sebastin Naveen, Tambaram chennai, 9840836588
+			</td>
+			<td width="10%" style="font-face:verdana;font-size:15px;">
+				Installation
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				03/22/2015
@@ -209,10 +218,10 @@
 				Assigned
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				03/22/2015
+				11/03/2015
 			</td>
 			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
-				Williams
+				Sathish Madhavan
 			</td>
 		</tr>
 		<tr>
@@ -220,7 +229,10 @@
 				1236745
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Peter, NY, 213-867-8367
+			    Cable was not properly placed - Posted by Peter, NY, 213-867-8367
+			</td>
+			<td width="10%" style="font-face:verdana;font-size:15px;">
+				Maintenance
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				04/23/2015
@@ -240,7 +252,10 @@
 				1236785
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Jack, NJ, 213-867-8367
+				Channels are not displaying appropriately - Posted by Jack, NJ, 213-867-8367
+			</td>
+			<td width="10%" style="font-face:verdana;font-size:15px;">
+				Maintenance
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				05/21/2015
