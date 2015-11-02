@@ -162,6 +162,7 @@
                                           <div class="form-group">
                                             <label>Products Category</label>
                                             <select  class="form-control" onchange="mapLoadFunction(this.value)">
+                                            	<option>--Select--</option>
                                                 <option >Fios Tv</option>
                                                 <option >Fios Phone</option>
                                                 <option>Fios Internet</option>

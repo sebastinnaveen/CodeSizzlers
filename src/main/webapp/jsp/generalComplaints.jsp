@@ -140,7 +140,7 @@
 	  <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tickets</h1>
+                    <h1 class="page-header">Complaints</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -163,6 +163,9 @@
 				Request
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
+				Request Category
+			</td>
+			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
 				Request Date
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
@@ -180,7 +183,10 @@
 				1236785
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Smith, FL, 213-867-8367
+				Fios internet was not working for the past 5 hours, please resolve this issue asap.
+			</td>
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+				Fios - Internet
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				10/22/2015
@@ -188,7 +194,7 @@
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				<a href="#">Assign</a>
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				
 			</td>
 			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
@@ -200,7 +206,10 @@
 				1236757
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Rahul, TX, 213-867-9367
+				There was issue with the setup box, please resolve.
+			</td>
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+				Fios - TV
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				03/22/2015
@@ -208,27 +217,30 @@
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				Assigned
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				03/22/2015
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+				03/24/2015
 			</td>
 			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
 				Williams
 			</td>
-		</tr>
+		</tr>			
 		<tr>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				1236745
+				1236752
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Peter, NY, 213-867-8367
+				Issue with the landline. please resolve.
+			</td>
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+				Fios - Landline
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				04/23/2015
+				09/12/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				<a href="#">Assign</a>
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				
 			</td>
 			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
@@ -237,22 +249,25 @@
 		</tr>
 		<tr>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				1236785
+				1236787
 			</td>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
-				Fios Despatch request - Posted by Jack, NJ, 213-867-8367
+				There was issue with the setup box, please resolve.
+			</td>
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+				Fios - TV
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				05/21/2015
+				01/10/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				Assigned
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
-				05/23/2015
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+				01/11/2015
 			</td>
 			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
-				Gerald
+				Peter
 			</td>
 		</tr>
 	</table>
