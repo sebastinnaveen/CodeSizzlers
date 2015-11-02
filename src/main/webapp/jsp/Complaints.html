@@ -100,7 +100,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Verizon Complaints</a>
+                <a class="navbar-brand" href="index.html">VzCommunicator - Complaints</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -125,7 +125,7 @@
                             <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
+                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Fios Dispatch</a>
                         </li>
                         
                     </ul>
@@ -136,7 +136,7 @@
         </nav>
 	  <div id="page-wrapper">
              <div>                
-                  <h1>Verizon - Complaints</h1>                
+                  <h1>Complaints</h1>                
                 <!-- /.col-lg-12 -->
             </div>
             
@@ -145,28 +145,36 @@
                                 <div class="col-lg-6">
                                     <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
                                         <div class="form-group">
-                                            <label>Please enter your Account ID</label>
+                                            <label>Enter your Account ID</label>
                                             <input class="form-control">
                                             
                                         </div>
                                           <div class="form-group">
-                                            <label>My Complaint</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>FIOS TV - Installation
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">FIOS - Internet
-                                            </label>
-                                             <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">FIOS - Phone
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Others
-                                            </label>
+                                            <legend><b>My Complaint Involves...</b></legend><br/>
+											<span>
+												<input id="Field1" type="radio" value="FIOS TV - Installation"	checked="checked"/>
+												<label><span style="font-family:'verdana';font-size:12px;">FIOS TV - Installation</span></label>
+											</span>
+											<br/>
+											<span>
+												<input id="Field1" type="radio" value="FIOS TV - Setup Box"/>
+												<label><span style="font-family:'verdana';font-size:12px;">FIOS - Internet</span></label>
+											</span>
+											<br/>
+											<span>
+												<input id="Field1" type="radio" value="FIOS TV - Cable Issue"/>
+												<label><span style="font-family:'verdana';font-size:12px;">FIOS - Phone</span></label>
+											</span>
+											<br/>
+											<span>
+												<input id="Field1" type="radio" value="Others"/>
+												<label><span style="font-family:'verdana';font-size:12px;">Others</span></label>
+											</span>
+											<br/><br/>
                                         </div>
                                           <div class="form-group">
                                             <label>State of Residence</label>
-                                            <select multiple class="form-control" onchange="mapLoadFunction(this.value)">
+                                            <select onchange="mapLoadFunction(this.value)">
                                                 <option >Alabama</option>
                                                 <option >Alaska</option>
                                                 <option>Arizona</option>
@@ -180,10 +188,7 @@
                                             <textarea class="form-control" rows="3"></textarea>
                                         </div>
                                         
-                                               <button type="submit" class="btn btn-default">Submit Issue</button>
-                                        <input type="hidden" id="customerName" name="customerName" value="Naveen" />
-										<input type="hidden" id="customerLocation" name="customerLocation" value="Tambaram,india,chennai" />
-										<input type="hidden" id="customerNumber" name="customerNumber" value="9840384885" />
+                                               <button type="submit" class="btn btn-default">Submit Complaint >></button>                                        
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

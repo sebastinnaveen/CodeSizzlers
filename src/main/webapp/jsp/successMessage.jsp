@@ -136,7 +136,7 @@
         </nav>
 	  <div id="page-wrapper">
              <div>                
-                  <h1>Vz Communicator - FIOS  Request</h1>                
+                  <h1>Vz Communicator - FIOS  Dispatch</h1>                
                 <!-- /.col-lg-12 -->
             </div>
             
@@ -144,41 +144,12 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
-                                        <div class="form-group">
-                                            <label>Please enter your Account ID/Mobile Number</label>
-                                            <input class="form-control">
-                                            
+                                   
+                                        <div class="form-group" id="map1" >
+                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/GetTime.html"></iframe>
                                         </div>
-                                          <div class="form-group">
-                                            <label>Installation/Maintanence</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Installation
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Maintanence
-                                            </label>
-                                            
-                                        </div>
-                                          <div class="form-group">
-                                            <label>Products Category</label>
-                                            <select multiple class="form-control" onchange="mapLoadFunction(this.value)">
-                                                <option >Fios Tv</option>
-                                                <option >Fios Phone</option>
-                                                <option>Fios Internet</option>
-                                              
-                                            </select>
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Comments</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group" id="map1" style="display:none">
-                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/Maps.HTML"></iframe>
-                                        </div>
-                                        <div class="form-group" id="map2" style="display:none">
-                                           <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/Maps1.html"></iframe>
-                                        </div>
-                                               <button type="submit" class="btn btn-default">Confirm Request</button>
+                                        
+                                   
                                         <input type="hidden" id="customerName" name="customerName" value="Naveen" />
 	<input type="hidden" id="customerLocation" name="customerLocation" value="Tambaram,india,chennai" />
 	<input type="hidden" id="customerNumber" name="customerNumber" value="9840384885" />

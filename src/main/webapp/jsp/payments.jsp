@@ -24,7 +24,7 @@
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
     <meta charset="utf-8">
-    <title>Verizon Complaints</title>    
+    <title>Quick Pay</title>    
   </head>
   <body>    
 	<script>
@@ -100,7 +100,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../jsp/Complaints.html">Verizon Complaints</a>
+                <a class="navbar-brand" href="../jsp/Complaints.html">VzCommunicator - Quick Pay</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -122,12 +122,11 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="/jsp/newRequest.jsp"><i class="fa fa-table fa-fw"></i> New Request</a>
+                            <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="/jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
-                        </li>
-                        
+                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Fios Dispatch</a>
+                        </li>                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -136,7 +135,7 @@
         </nav>
 	  <div id="page-wrapper">
              <div>                
-                  <h1>Vz Communicator- Payments</h1>                
+                  <h1>Quick Pay</h1>                
                 <!-- /.col-lg-12 -->
             </div>
             

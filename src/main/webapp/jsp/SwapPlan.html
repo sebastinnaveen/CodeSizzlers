@@ -46,7 +46,7 @@
 .lp-section-wrap.pick-size .sub-h1 {margin-bottom: 0;}
 </style>
     <meta charset="utf-8">
-    <title>Verizon SwapPlan</title>    
+    <title>SwapPlan</title>    
   </head>
   <body>    
 	<script>
@@ -97,6 +97,51 @@
 			}	*/		
 		}
 		
+		function drpOnChange(drpvalue)
+		{			
+			if(drpvalue==1)
+			{
+				document.getElementById("divPlans").style.display = "block";
+				document.getElementById("fiosTV").style.display = "block";
+				document.getElementById("fiosInternet").style.display = "none";
+				document.getElementById("fiosPhone").style.display = "none";
+				document.getElementById("VzWireless").style.display = "none";
+			}
+			else if(drpvalue==2)
+			{
+				document.getElementById("divPlans").style.display = "block";				
+				document.getElementById("fiosInternet").style.display = "block";
+				document.getElementById("fiosPhone").style.display = "none";
+				document.getElementById("VzWireless").style.display = "none";
+				document.getElementById("fiosTV").style.display = "none";	
+				
+			}
+			else if (drpvalue==3)
+			{
+				document.getElementById("divPlans").style.display = "block";				
+				document.getElementById("fiosInternet").style.display = "none";
+				document.getElementById("fiosPhone").style.display = "block";
+				document.getElementById("VzWireless").style.display = "none";
+				document.getElementById("fiosTV").style.display = "none";	
+			}
+			else if(drpvalue==4)
+			{
+				document.getElementById("divPlans").style.display = "block";				
+				document.getElementById("fiosInternet").style.display = "none";
+				document.getElementById("fiosPhone").style.display = "none";
+				document.getElementById("VzWireless").style.display = "block";
+				document.getElementById("fiosTV").style.display = "none";	
+			}
+			else
+			{
+				document.getElementById("divPlans").style.display = "none";				
+				document.getElementById("fiosInternet").style.display = "none";
+				document.getElementById("fiosPhone").style.display = "none";
+				document.getElementById("VzWireless").style.display = "none";
+				document.getElementById("fiosTV").style.display = "none";
+			}
+		}
+		
 		function mapLoadFunction(id)
 		{ //alert(id);
 			//document.getElementById("iframeMap").src = "GetTime.html";
@@ -122,7 +167,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Verizon SwapPlan</a>
+                <a class="navbar-brand" href="index.html">Vz Communicator - Easy Plan Swap</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -147,7 +192,7 @@
                             <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Installation/Maintanence</a>
+                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Fios Dispatch</a>
                         </li>
                         
                     </ul>
@@ -157,55 +202,90 @@
             <!-- /.navbar-static-side -->
         </nav>
 	  <div id="page-wrapper">
-             <div>                
-                  <h1>Verizon - SwapPlan</h1>                
+             <div>
+            <div>                
+                    <h1>Easy Plan Swap</h1>                
                 <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
+            <div>
+			    <div>
+					<legend><span style="font-family:'verdana';font-size:12px;"><b>Current Plan : "My Verizon Plan - $80/month"</b></span></legend><br/><br/>
+					<label><b><span style="font-family:'verdana';font-size:12px;">Choose Product Category to Swap</span></b></label>					
+						<select id="Field7" onchange="return drpOnChange(this.value);">
+							<option	value="--Select--" selected>--Select--</option>
+							<option	value="1">FIOS TV</option>
+							<option	value="2">FIOS Internet</option>
+							<option	value="3">FIOS Phone</option>
+							<option	value="4">Wireless</option>
+						</select><br/><br/>
+					<div id="divPlans" style="display:none;">						
+					<legend><span style="font-family:'verdana';font-size:12px;"><b>Swap to the best available plans :</b></span></legend><br/>
+					<div id="fiosTV" style="display:none;">
+						<span>
+							<input id="Field1" type="radio" value="FIOS TV - Pack 1"/>
+							<label><span style="font-family:'verdana';font-size:12px;">FIOS TV - Plan 1</span></label>
+						</span>
+						<br/>
+						<span>
+							<input id="Field1" type="radio" value="FIOS TV - Pack 2"/>
+							<label><span style="font-family:'verdana';font-size:12px;">FIOS TV - Plan 2</span></label>
+						</span>
+						<br/>
+					</div>
+					<div id="fiosInternet" style="display:none;">
+						<span>
+							<input id="Field1" type="radio" value="FIOS Internet - Pack 1"/>
+							<label><span style="font-family:'verdana';font-size:12px;">FIOS Internet - Plan 1</span></label>
+						</span>
+						<br/>
+						<span>
+							<input id="Field1" type="radio" value="FIOS Internet - Pack 2"/>
+							<label><span style="font-family:'verdana';font-size:12px;">FIOS Internet - Plan 2</span></label>
+						</span>
+						<br/>
+					</div>
+					<div id="fiosPhone" style="display:none;">
+						<span>
+							<input id="Field1" type="radio" value="FIOS TV - Cable Issue"/>
+							<label><span style="font-family:'verdana';font-size:12px;">FIOS Phone - Plan 1</span></label>
+						</span>
+						<br/>
+					</div>
+					<div id="VzWireless" style="display:none;">
+						<span>
+							<input id="Field1" type="radio" value="Vz Wireless S - $20/Month"/>
+							<label><span style="font-family:'verdana';font-size:12px;">Vz Wireless S - $20/Month</span></label>
+						</span>
+						<br/>
+						<span>
+							<input id="Field1" type="radio" value="FIOS TV - Cable Issue"/>
+							<label><span style="font-family:'verdana';font-size:12px;">Vz Wireless L - $40/Month</span></label>
+						</span>
+						<br/>
+						<span>
+							<input id="Field1" type="radio" value="Vz Wireless L - $60/Month"/>
+							<label><span style="font-family:'verdana';font-size:12px;">Vz Wireless XL - $60/Month</span></label>
+						</span>										
+						<br/>
+					</div>
+				  </div>
+				  <br/>
+					<label class="desc" id="title4" for="Field4">
+						<span style="font-family:'verdana';font-size:12px;"><b>Please enter your email if you'd like us to follow up with you.</b></span>
+					</label>
+					<div>
+						<input id="Field4" name="Field4" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
+					</div>
+					<br/>
+					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit Request >>" />
+				</div>                    
+                        
+                        
+             </div>
+             
             
-			   <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                   
-                                        <div class="form-group">
-                                           <div class="marq-slide-wrap col12-box">
-		<div class="marq-slide-content align-center">
-			<header>
-				<h1 class="promo-h1 vz-red-text">One plan. Pick a size. <br>Simple.</h1>
-				<p class="vz-black-text">Introducing XXL. 18GB / $100.</p>
-			</header>
-		</div>
-	</div>
-                                            
-                                        </div>
-                                          <div class="form-group">
-                                           <ul class="size-pricing">
-	<li class="plan-size small"><span class="plan-size-letter" title="Small">S</span> <span class="plan-amount-price vz-red-text">1<abbr title="Gigabyte">GB</abbr> / $30</span>
-	</li>
-	
-	<li class="plan-size medium"><span class="plan-size-letter" title="Medium">M</span> <span class="plan-amount-price vz-red-text">3<abbr title="Gigabytes">GB</abbr> / $45</span>
-	</li>
-
-	<li class="plan-size large"><span class="plan-size-letter" title="Large">L</span> <span class="plan-amount-price vz-red-text">6<abbr title="Gigabytes">GB</abbr> / $60</span>
-	</li>
-
-	<li class="plan-size xlarge"><span class="plan-size-letter" title="Extra Large">XL</span> <span class="plan-amount-price vz-red-text">12<abbr title="Gigabytes">GB</abbr> / $80</span>
-	</li>
-
-	<li class="plan-size xxlarge"><span class="plan-size-letter" title="Extra Extra Large">XXL</span> <span class="plan-amount-price vz-red-text">18<abbr title="Gigabytes">GB</abbr> / $100</span>
-	</li>
-</ul>
-<p class="sub-h1 vz-black-text">All sizes include unlimited talk and text.</p>
-
-<p class="disclaimer-text">Plan cost per month plus $20/month for each smartphone line. Taxes/fees apply.</p>
-                                        </div>
-                                         
-                                  
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                                
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
+        </div>
         </div>
 	
   </body>

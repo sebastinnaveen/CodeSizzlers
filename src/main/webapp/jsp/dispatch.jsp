@@ -136,7 +136,7 @@
         </nav>
 	  <div id="page-wrapper">
              <div>                
-                  <h1>Vz Communicator - FIOS  Request</h1>                
+                  <h1>Vz Communicator - FIOS Dispatch</h1>                
                 <!-- /.col-lg-12 -->
             </div>
             
@@ -161,7 +161,7 @@
                                         </div>
                                           <div class="form-group">
                                             <label>Products Category</label>
-                                            <select multiple class="form-control" onchange="mapLoadFunction(this.value)">
+                                            <select  class="form-control" onchange="mapLoadFunction(this.value)">
                                                 <option >Fios Tv</option>
                                                 <option >Fios Phone</option>
                                                 <option>Fios Internet</option>
