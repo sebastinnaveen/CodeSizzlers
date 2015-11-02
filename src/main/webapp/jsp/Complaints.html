@@ -75,6 +75,15 @@
 			}	*/		
 		}
 		
+		function clickbtn()
+		{			
+			if(document.getElementById("lblMessage").style.display == 'none')
+			{
+				document.getElementById("lblMessage").style.display = 'block';			
+			}
+			return false;
+		}
+		
 		function mapLoadFunction(id)
 		{ //alert(id);
 			//document.getElementById("iframeMap").src = "GetTime.html";
@@ -143,11 +152,12 @@
 			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
+                                    <form role="form" name="fiosDispatch" id="fiosDispatch">
+                                    	<Label id="lblMessage" style="display:none;"><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
+                                    	<br/>
                                         <div class="form-group">
                                             <label>Enter your Account ID</label>
                                             <input class="form-control">
-                                            
                                         </div>
                                           <div class="form-group">
                                             <legend><b>My Complaint Involves...</b></legend><br/>
@@ -172,7 +182,7 @@
 											</span>
 											<br/><br/>
                                         </div>
-                                          <div class="form-group">
+                                          <div class="form-group" style="display:none;">
                                             <label>State of Residence</label>
                                             <select onchange="mapLoadFunction(this.value)">
                                                 <option >Alabama</option>
@@ -188,7 +198,7 @@
                                             <textarea class="form-control" rows="3"></textarea>
                                         </div>
                                         
-                                               <button type="submit" class="btn btn-default">Submit Complaint >></button>                                        
+                                               <button type="submit" class="btn btn-default" onClick="javascript:return clickbtn();">Submit Complaint >></button>                                        
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

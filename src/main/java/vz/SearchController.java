@@ -168,25 +168,12 @@ public class SearchController extends HttpServlet {
     		
     		
      }
-     else if(requestType.equals("CMR"))
+     else if(requestType.equals("Complaints"))
      {
     	 System.out.println("requestType--->"+requestType);
-    	 String requestString =" <thead>" +
-                                        "<tr>"+
-                                            "<th>Mobile No</th>"+
-                                            "<th>Call Duration</th>"+
-                                            "<th>Originating Cell Id</th>"+
-                                            "<th>Destinating Cell Id</th>"+
-                                            "<th>IMEI NO</th>"+
-                                        "</tr>"+
-                                    "</thead>"+
-                                    "<tbody ><tr class=\"odd gradeX\">"+
-                                            "<td>Trident</td>;" +
-                                            "<td>Internet Explorer 4.0</td>" +
-                                            "<td>Win 95+</td>" +
-                                            "<td class=\"center\">4</td>"+
-                                            "<td class=\"center\">X</td>" +
-                                       " </tr></tbody>" ;
+    	 request.setAttribute("success", "mobilesub");
+	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/Complaints.html");
+			rd.include(request, response);
 //    	 		response.setContentType("text/html;charset=UTF-8");
 //    	 		PrintWriter out = response.getWriter();
 //    	 		try {
