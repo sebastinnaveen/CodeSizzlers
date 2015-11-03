@@ -146,17 +146,14 @@
 			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" name="fiosDispatch" id="fiosDispatch" method ="post" action="../searchController?type=Notify">
+                                    
                                    
-                                        <div class="form-group" id="map1" style='display:none' >
+                                        <div class="form-group" id="map1"  >
                                            <iframe frameborder="0" scrolling="no" id="iframeMap" height="400px" width="100%" src="../jsp/GetTime.html"></iframe>
                                         </div>
                                         
                                    
-                                        <input type="hidden" id="customerName" name="customerName" value="Naveen" />
-	<input type="hidden" id="customerLocation" name="customerLocation" value="Tambaram,india,chennai" />
-	<input type="hidden" id="customerNumber" name="customerNumber" value="9840384885" />
-                                    </form>
+                                       
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 
