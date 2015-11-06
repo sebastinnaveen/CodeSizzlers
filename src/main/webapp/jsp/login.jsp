@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator - Dashboard</a>
+                <a class="navbar-brand" href="#">VzCommunicator - Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -73,7 +73,7 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="/jsp/userDashboard.jsp"><i class="fa fa-table fa-fw"></i> VzCommunicator</a>
+                            <a href="/jsp/userDashboard.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>        
                         <li>
                             <a href="../jsp/callcenteradmin.jsp"><i class="fa fa-table fa-fw"></i> Admin</a>
