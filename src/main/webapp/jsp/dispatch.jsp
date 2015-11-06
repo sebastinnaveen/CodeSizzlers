@@ -100,7 +100,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator</a>
+                <a class="navbar-brand" href="../jsp/login.jsp">VzCommunicator </a>
             </div>
             <!-- /.navbar-header -->
 
@@ -124,9 +124,7 @@
                         <li>
                             <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i>Dashboard</a>
                         </li>
-                        <li>
-                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Fios Dispatch</a>
-                        </li>
+                       
                         
                     </ul>
                 </div>
@@ -150,7 +148,7 @@
                                             
                                         </div>
                                           <div class="form-group">
-                                            <label>Installation/Maintanence</label>
+                                            <label>Installation/Maintanence</label><br/>
                                             <label class="radio-inline">
                                                 <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Installation
                                             </label>
