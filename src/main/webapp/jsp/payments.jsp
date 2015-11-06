@@ -124,9 +124,7 @@
                         <li>
                             <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
-                            <a href="../jsp/dispatch.jsp"><i class="fa fa-dashboard fa-fw"></i>Fios Dispatch</a>
-                        </li>                        
+                                              
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
