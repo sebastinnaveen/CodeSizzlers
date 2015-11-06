@@ -163,9 +163,13 @@
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
 				Availability Status
 			</td>
+			
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
 				Speciality
-			</td>			
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				<a href="#">Track Technician</a>
+			</td>		
 		</tr>
 		<tr>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
@@ -176,7 +180,10 @@
 			</td>
 			<td width="30%" style="font-face:verdana;font-size:15px;">
 				Fios TV, Fios Internet
-			</td>			
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				<a href="#">Track Technician</a>
+			</td>				
 		</tr>
 		<tr>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
@@ -187,6 +194,9 @@
 			</td>
 			<td width="30%" style="font-face:verdana;font-size:15px;">
 				Fios TV, Fios Internet, Fios Landline
+			</td>	
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				<a href="#">Track Technician</a>
 			</td>			
 		</tr>
 		<tr>
@@ -198,6 +208,9 @@
 			</td>
 			<td width="30%" style="font-face:verdana;font-size:15px;">
 				Fios TV, Fios Landline
+			</td>	
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				<a href="#">Track Technician</a>
 			</td>			
 		</tr>
 		<tr>
@@ -209,9 +222,15 @@
 			</td>
 			<td width="30%" style="font-face:verdana;font-size:15px;">
 				All Fios Services
-			</td>			
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+				<a href="#">Track Technician</a>
+			</td>				
 		</tr>
 	</table>
+	
+	
+	
                             </div>
                             <!-- /.table-responsive -->
                            
