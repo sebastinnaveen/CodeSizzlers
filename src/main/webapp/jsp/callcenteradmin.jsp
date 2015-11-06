@@ -100,7 +100,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator - Admin</a>
+                <a class="navbar-brand" href="../jsp/login.jsp">VzCommunicator - Admin</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -122,7 +122,7 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="../jsp/callcenteradmin.jsp"><i class="fa fa-table fa-fw"></i> Fios Dispatch Requests</a>
+                            <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="../jsp/generalComplaints.jsp"><i class="fa fa-dashboard fa-fw"></i>General Complaints</a>
@@ -192,7 +192,28 @@
 				10/22/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				<a href="#">Assign</a>
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				  Assign
+				</button>
+				
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					      </div>
+					      <div class="modal-body">
+					        ...
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				
@@ -296,6 +317,8 @@
             </div>
             <!-- /.row -->
         </div>
+        
+        
 	
   </body>
 

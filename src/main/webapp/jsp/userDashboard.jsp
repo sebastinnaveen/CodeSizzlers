@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator - Dashboard</a>
+                <a class="navbar-brand" href="../jsp/login.jsp">VzCommunicator - Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 

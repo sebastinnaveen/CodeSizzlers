@@ -100,7 +100,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">VzCommunicator - Admin</a>
+                <a class="navbar-brand" href="../jsp/callcenteradmin.jsp">VzCommunicator - Admin</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -122,7 +122,7 @@
                             /input-group 
                         </li>-->
                         <li>
-                            <a href="../jsp/callcenteradmin.jsp"><i class="fa fa-table fa-fw"></i> Fios Dispatch Requests</a>
+                            <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="../jsp/generalComplaints.jsp"><i class="fa fa-dashboard fa-fw"></i>General Complaints</a>

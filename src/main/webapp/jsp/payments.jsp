@@ -100,7 +100,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../jsp/Complaints.html">VzCommunicator - Quick Pay</a>
+                <a class="navbar-brand" href="../jsp/login.jsp">VzCommunicator - Quick Pay</a>
             </div>
             <!-- /.navbar-header -->
 
