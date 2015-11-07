@@ -95,8 +95,8 @@
                                         </div>
                                          
                                          <div class="form-group">
-                                            <label>Bill Amount</label>
-                                              <input class="form-control">
+                                            <label>Amount to pay</label>
+                                              <input class="form-control"> <a href="#">Want to know your bill amount?</a>
                                         </div>
                                         
                                                <button type="submit" class="btn btn-default" onClick="javascript:return clickbtn();">Pay >></button>                                        
