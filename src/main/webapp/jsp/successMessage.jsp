@@ -138,6 +138,7 @@
             <!-- /.navbar-static-side -->
         </nav>
 	  <div id="page-wrapper">
+	  
              <div>                 
                   <h1>Vz Communicator - FIOS  Dispatch</h1>                
                 <!-- /.col-lg-12 -->
