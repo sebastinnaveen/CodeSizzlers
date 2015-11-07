@@ -168,7 +168,7 @@
 				Speciality
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
-				<a href="#">Track Technician</a>
+				Action
 			</td>		
 		</tr>
 		<tr>
@@ -196,7 +196,7 @@
 				Fios TV, Fios Internet, Fios Landline
 			</td>	
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
-				Action
+				<a href="#">Track Technician</a>
 			</td>			
 		</tr>
 		<tr>
