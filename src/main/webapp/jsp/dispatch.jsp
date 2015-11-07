@@ -29,6 +29,12 @@
 <link href="../bower_components/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+
 <meta charset="utf-8">
 <title>VDSI Hackathon</title>
 </head>
@@ -97,7 +103,30 @@
 		}
 		
 	</script>
+<script>
+$(document).ready(function() {
+    $('#fiosDispatch').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            txtMobNo: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter account / mobile number'
+                    }
+                }
+            }
+           
+            
+        }
+    });
+});
 
+</script>
 	<nav class="navbar navbar-default navbar-static-top" role="navigation"
 		style="margin-bottom: 0">
 		<div class="navbar-header">
@@ -149,13 +178,10 @@
 				<div class="col-lg-6">
 					<form role="form" name="fiosDispatch" id="fiosDispatch"
 						method="post" action="../searchController?type=Notify">
-						 <div class="form-group has-error">
-                                            <label class="control-label" for="inputError">Input with error</label>
-                                            <input type="text" class="form-control" id="inputError">
-                          </div>
+						 
 						<div class="form-group" for="inputError">
 							<label>Please enter your Account ID/Mobile Number</label> <input
-								class="form-control" id="inputError">
+								class="form-control" id="txtMobNo">
 
 						</div>
 						<div class="form-group">
@@ -191,7 +217,7 @@
 							<iframe frameborder="0" scrolling="no" id="iframeMap"
 								height="400px" width="100%" src="../jsp/Maps1.html"></iframe>
 						</div>
-						<button type="submit" class="btn btn-default" onClick="javascript:return clickMap();">Confirm
+						<button type="submit" class="btn btn-default" >Confirm
 							Request</button>
 						<input type="hidden" id="customerName" name="customerName"
 							value="Naveen" /> <input type="hidden" id="customerLocation"

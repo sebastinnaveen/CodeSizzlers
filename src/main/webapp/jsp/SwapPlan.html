@@ -23,32 +23,41 @@
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
-<style type="text/css">
-.lp-section-wrap.pick-size {padding-top: 0;}
-.lp-section-wrap.pick-size .col12-box {padding-top: 0;}
-.lp-section-wrap.pick-size .promo-h3 {margin-top: 0;}
-.lp-section-wrap.pick-size .size-pricing {padding: 90px 0 54px; margin: 0; list-style: none; display: inline-block; font-family:"Neue Haas Grotesk Text",Helvetica,Arial,sans-serif; width: 100%;}
-.lp-section-wrap.pick-size .size-pricing .plan-size {float: left; text-align: center; width: 20%;}
-.lp-section-wrap.pick-size .size-pricing .plan-size-letter {background: #abe0f9; border-radius: 50%; width: 138px; height: 138px; font-size: 54px; font-size: 5.4rem; line-height: 13.8rem; font-weight: 700; display: block; margin: 0 auto; position: relative;}
-.lp-section-wrap.pick-size .size-pricing .plan-size-letter::after {content: ''; position: absolute; bottom: 0; right: -16px; width: 55px; height: 228px; background: url(https://ss7.vzw.com/is/image/VerizonWireless/illustration-four-ice-cream-cones-bettermatters-v2?$defaultScale$&scl=2.25) no-repeat;}
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
 
-.lp-section-wrap.pick-size .size-pricing .plan-size.small .plan-size-letter::after {background-position: 0px -2px;}
-.lp-section-wrap.pick-size .size-pricing .plan-size.medium .plan-size-letter::after {background-position: -73px -2px;}
-.lp-section-wrap.pick-size .size-pricing .plan-size.large .plan-size-letter::after {background-position: -148px -2px;}
-.lp-section-wrap.pick-size .size-pricing .plan-size.xlarge .plan-size-letter::after {background-position: -218px -2px;}
-.lp-section-wrap.pick-size .size-pricing .plan-size.xxlarge .plan-size-letter::after {background-position: -290px -2px;}
 
-.lp-section-wrap.pick-size .size-pricing .plan-amount-price {display: block; margin: 18px 0 0; font-weight: 700; font-size: 24px; font-size: 2.4rem;}
-.lp-section-wrap.pick-size .size-pricing .plan-best-for-label {display: block; font-size: 16px; font-size: 1.6rem; font-weight: 700; margin: 24px 0 6px;}
-.lp-section-wrap.pick-size .size-pricing .plan-best-for-list {display: block; list-style: none; padding: 0; margin: 18px 0 0; line-height: 1.2em; font-size: 16px; font-size: 1.6rem;}
-.lp-section-wrap.pick-size .size-pricing .plan-best-for-list li {padding: 4px 0;}
-
-.lp-section-wrap.pick-size .sub-h1 {margin-bottom: 0;}
-</style>
     <meta charset="utf-8">
     <title>SwapPlan</title>    
   </head>
-  <body>    
+  <body>  
+  <script>
+$(document).ready(function() {
+    $('#swapPlan').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required and cannot be empty'
+                    }
+                  
+                }
+            }
+        }
+    });
+});
+
+</script>  
 	<script>
 		localStorage.clear();
 
@@ -215,6 +224,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <form name="swapPlan" id="swapPlan">
             <div>
 			    <div>
 			    	<Label id="lblMessage" style="display:none;"><font color="green">Your selected new plan will be effective from December 1st 2015. Any clarifications please contact "#201-888-4521". !</font></Label>
@@ -284,7 +294,7 @@
 						<span style="font-family:'verdana';font-size:12px;"><b>Please enter your email if you'd like us to follow up with you.</b></span>
 					</label>
 					<div>
-						<input id="Field9" name="Field9" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
+						<input id="email" name="Field9" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
 					</div>
 					<br/>
 					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit" onClick="javascript:return clickbtn();" value="Submit Request >>" />
@@ -292,7 +302,7 @@
                         
                         
              </div>
-             
+             </form>
             
         </div>
         </div>
