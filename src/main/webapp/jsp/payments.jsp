@@ -24,73 +24,10 @@
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
     <meta charset="utf-8">
-    <title>Quick Pay</title>    
+    <title>Verizon Quick Pay</title>    
   </head>
   <body>    
-	<script>
-		localStorage.clear();
-
-		var Tech1 = {};
-		Tech1.Name = "Sathish";
-		Tech1.Location = "Chromepet,india,chennai";
-		Tech1.Phone = "9840383885";
-		Tech1.Latitude = "12.9531946";
-		Tech1.Longitude = "80.1416008";
-
-		var Tech2 = {};
-		Tech2.Name = "Ramkumar";
-		Tech2.Location = "Vadapalani,india,chennai";
-		Tech2.Phone = "9840384885";
-		Tech2.Latitude = "13.0497";
-		Tech2.Longitude = "80.2126";
-
-		var Customer1 = {};
-		Customer1.Name = "Naveen";
-		Customer1.Location = "Tambaram,india,chennai";
-		Customer1.Phone = "9840384885";
-
-
-		localStorage.setItem ('Tech1', JSON.stringify(Tech1));
-		localStorage.setItem ('Tech2', JSON.stringify(Tech2));
-		localStorage.setItem ('Customer1', JSON.stringify(Customer1));
-		
-		function clickMap()
-		{
-			if(document.getElementById("txtSubid").value == '')
-			{
-			   alert('Please enter the Subscription ID');
-			   document.getElementById("txtSubid").focus();
-			   return false;
-			}	
-			
-			if(document.getElementById("lblMessage").style.display == 'none')
-			{				
-				setTimeout(loadiFrame(), 5000);
-			}
-			
-			/*if(document.getElementById("iframeMap").style.display == 'none')
-			{
-				document.getElementById("iframeMap").style.display = 'block';
-				document.getElementById("iframeMap").src = "Maps.HTML";
-			}	*/		
-		}
-		
-		function mapLoadFunction(id)
-		{ //alert(id);
-			//document.getElementById("iframeMap").src = "GetTime.html";
-			if(id == 'Fios Tv'){
-			document.getElementById("map1").style.display = 'block';
-			document.getElementById("map2").style.display = 'none';
-			}
-			else if(id == 'Fios Phone'){
-			document.getElementById("map2").style.display = 'block';
-			document.getElementById("map1").style.display = 'none';
-			}
-			
-			
-		}
-		
-	</script>
+	
     
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -124,7 +61,8 @@
                         <li>
                             <a href="../jsp/login.jsp"><i class="fa fa-table fa-fw"></i> Dashboard</a>
                         </li>
-                                              
+                        
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -138,38 +76,36 @@
             </div>
             
 			   <div class="panel-body">
-			   				<table width="100%">
-			   					<tr>
-			   						<td width="60%" align="Right">
-			   							<Label id="lblInput">Enter Landline (or) Mobile Number : </Label>
-			   						</td>
-			   						<td>
-										<input id="txtInput" type="textbox"/>			   							
-			   						</td>
-			   					</tr>
-			   					<tr>
-			   						<td width="60%" align="Right">
-			   							<Label id="lblInput">Enter E-mail ID : </Label>
-			   						</td>
-			   						<td>
-										<input id="txtEmail" type="textbox"/>		   							
-			   						</td>
-			   					</tr>
-			   					<tr>
-			   						<td width="60%" align="Right">
-			   							<Label id="lblInput">Bill Amount : </Label>
-			   						</td>
-			   						<td>
-										<input id="txtAmt" type="textbox"/>	   							
-			   						</td>
-			   					</tr>
-			   					<tr colspan="2" align="center">
-			   					    <td colspan=2>
-			   							<input type="button" value="Pay >>" />
-			   						</td>
-			   					</tr>
-			   				</table>
-                            
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" name="fiosDispatch" id="fiosDispatch">
+                                    	<Label id="lblMessage" style="display:none;"><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
+                                    	<br/>
+                                        <div class="form-group">
+                                          <label>Enter Landline (or) Mobile Number </label>
+                                            <input class="form-control">
+                                        </div>
+                                          <div class="form-group">
+                                            <label>Enter Email ID</label>
+											<span>
+												 <input class="form-control">
+												
+											</span>
+											<br/>
+										<br/>
+                                        </div>
+                                         
+                                         <div class="form-group">
+                                            <label>Bill Amount</label>
+                                              <input class="form-control">
+                                        </div>
+                                        
+                                               <button type="submit" class="btn btn-default" onClick="javascript:return clickbtn();">Pay >></button>                                        
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                
+                            </div>
                             <!-- /.row (nested) -->
                         </div>
         </div>
