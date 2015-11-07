@@ -22,10 +22,56 @@
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+
+
+	
 <link rel="stylesheet" type="text/css" href="examples.css" />
     <meta charset="utf-8">
     <title>Verizon Quick Pay</title>    
-  </head>
+	<script>
+$(document).ready(function() {
+    $('#formPay').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            txtMobNo: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter landline / mobile number'
+                    }
+                }
+            },
+            txtEmail: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required and cannot be empty'
+                    }
+                  
+                }
+            },
+            txtAmt: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please enter amount to pay'
+                    }
+                   
+                }
+            }
+        }
+    });
+});
+
+</script>
+</head>
   <body>    
 	
     
@@ -78,17 +124,17 @@
 			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" name="fiosDispatch" id="fiosDispatch">
+                                  <form role="form" name="formPay" id="formPay">
                                     	<Label id="lblMessage" style="display:none;"><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
                                     	<br/>
                                         <div class="form-group">
                                           <label>Enter Landline (or) Mobile Number </label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="txtMobNo">
                                         </div>
                                           <div class="form-group">
                                             <label>Enter Email ID</label>
 											<span>
-												 <input class="form-control">
+												 <input class="form-control" name="txtEmail">
 												
 											</span>
 									
@@ -96,7 +142,7 @@
                                          
                                          <div class="form-group">
                                             <label>Amount to pay</label>
-                                              <input class="form-control"> <a href="#">Want to know your bill amount?</a>
+                                              <input class="form-control" name="txtAmt"> <a href="#">Want to know your bill amount?</a>
                                         </div>
                                         
                                                <button type="submit" class="btn btn-default" onClick="javascript:return clickbtn();">Pay >></button>                                        
