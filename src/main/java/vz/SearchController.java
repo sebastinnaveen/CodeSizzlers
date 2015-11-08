@@ -77,7 +77,7 @@ public class SearchController extends HttpServlet {
  try {
 	 //logger.info("Inside servlet");
      String requestType = request.getParameter("type");
-     if(requestType!=null&&requestType.equalsIgnoreCase("Notify"))
+     if(requestType!=null&&requestType.equalsIgnoreCase("fiosDispatch"))
      {
     	 
     	 System.out.println("calling");
