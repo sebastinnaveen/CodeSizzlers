@@ -202,6 +202,38 @@ public class SearchController extends HttpServlet {
 //    	 			}
     	 
      	}
+     else if(requestType!=null&&requestType.equals("swapplan"))
+     {
+    	 System.out.println("requestType--->"+requestType);
+    	 request.setAttribute("success", "mobilesub");
+	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/swapPlan.jsp");
+			rd.include(request, response);
+//    	 		response.setContentType("text/html;charset=UTF-8");
+//    	 		PrintWriter out = response.getWriter();
+//    	 		try {
+//    	 				/* TODO output your response here.*/
+//    	 				out.println(requestString);
+//    	 			} finally {
+//    	 					out.close();
+//    	 			}
+    	 
+     	}
+     else if(requestType!=null&&requestType.equals("complaints"))
+     {
+    	 System.out.println("requestType--->"+requestType);
+    	 request.setAttribute("success", "mobilesub");
+	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/complaints.jsp");
+			rd.include(request, response);
+//    	 		response.setContentType("text/html;charset=UTF-8");
+//    	 		PrintWriter out = response.getWriter();
+//    	 		try {
+//    	 				/* TODO output your response here.*/
+//    	 				out.println(requestString);
+//    	 			} finally {
+//    	 					out.close();
+//    	 			}
+    	 
+     	}
      
  } catch (Exception e) {
 	 e.printStackTrace();

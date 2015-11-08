@@ -132,7 +132,7 @@
                         <a href="#">
                               <div class="panel-footer">
                                <div class="panel-footer">
-                                <span class="pull-left"><a href="../jsp/SwapPlan.html"><i class="fa fa-table fa-fw"></i>Easy Plan Swap</a></span>
+                                <span class="pull-left"><a href="../jsp/swapPlan.jsp"><i class="fa fa-table fa-fw"></i>Easy Plan Swap</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -160,7 +160,7 @@
                         <a href="#">
                             <div class="panel-footer">
                                 <div class="panel-footer">
-                                <span class="pull-left"><a href="../jsp/Complaints.html"><i class="fa fa-table fa-fw"></i>Complaints</a></span>
+                                <span class="pull-left"><a href="../jsp/complaints.jsp"><i class="fa fa-table fa-fw"></i>Complaints</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

@@ -228,8 +228,10 @@ $(document).ready(function() {
             
             <div>
 			    <div>
-			    	<Label id="lblMessage" style="display:none;"><font color="green">Your selected new plan will be effective from the next billing cycle. Any clarifications please contact "#201-888-4521". !</font></Label>
+			    <% if(request.getAttribute("success")!=null&&request.getAttribute("success").equals("mobilesub")){ %>
+			    	<Label id="lblMessage" ><font color="green">Your selected new plan will be effective from the next billing cycle. Any clarifications please contact "#201-888-4521". !</font></Label>
                     <br/>
+                     <%} %>	
 					<legend><span style="font-family:'verdana';font-size:12px;"><b>Current Plan : "My Verizon Plan - $80/month"</b></span></legend><br/><br/>
 					<label><b><span style="font-family:'verdana';font-size:12px;">Choose Product Category to Swap</span></b></label>					
 						<select id="Field7" onchange="return drpOnChange(this.value);">
@@ -298,7 +300,7 @@ $(document).ready(function() {
 						<input id="email" name="Field9" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
 					</div>
 					<br/>
-					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit" onClick="javascript:return clickbtn();" value="Submit Request >>" />
+					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit"  value="Submit Request >>" />
 				</div>                    
                         
                         
