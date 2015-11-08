@@ -297,7 +297,7 @@ $(document).ready(function() {
 						<span style="font-family:'verdana';font-size:12px;"><b>Please enter your email if you'd like us to follow up with you.</b></span>
 					</label>
 					<div>
-						<input id="email" name="Field9" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
+						<input id="email" name="email" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
 					</div>
 					<br/>
 					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit"  value="Submit Request >>" />

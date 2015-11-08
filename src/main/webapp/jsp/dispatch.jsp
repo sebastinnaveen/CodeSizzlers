@@ -178,11 +178,11 @@ $(document).ready(function() {
 			<div class="row">
 				<div class="col-lg-6">
 					<form role="form" name="fiosDispatch" id="fiosDispatch"
-						method="post" action="../searchController?type=Notify">
+						method="post" action="../searchController?type=fiosDispatch">
 						 
 						<div class="form-group" for="inputError">
 							<label>Please enter your Account ID/Mobile Number</label> <input
-								class="form-control" id="txtMobNo">
+								class="form-control" id="txtMobNo" name="txtMobNo">
 
 						</div>
 						<div class="form-group">

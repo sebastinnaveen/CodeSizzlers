@@ -108,7 +108,7 @@
 	</script>
     <script>
 $(document).ready(function() {
-    $('#formPay').bootstrapValidator({
+    $('#complaints').bootstrapValidator({
         container: '#messages',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -193,7 +193,7 @@ $(document).ready(function() {
                                         <div class="form-group">
                                         	<a href="../jsp/ComplaintsInbox.html">Inbox</a><br/><br/>
                                             <label>Enter your Account / Mobile Number</label>
-                                            <input class="form-control" id="acctNo">
+                                            <input class="form-control" id="acctNo" name="acctNo">
                                         </div>
                                           <div class="form-group">
                                             <legend><b>My Complaint Involves...</b></legend><br/>
@@ -231,7 +231,7 @@ $(document).ready(function() {
                                         </div>
                                          <div class="form-group">
                                             <label>Issue</label>
-                                            <textarea class="form-control" rows="3" id="issue"></textarea>
+                                            <textarea class="form-control" rows="3" id="issue" name="issue"></textarea>
                                         </div>
                                         
                                                <button type="submit" class="btn btn-default" >Submit Complaint >></button>                                        
