@@ -3,8 +3,8 @@
 <html>
   <head>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <script type="text/javascript" src="https://hpneo.github.io/gmaps/gmaps.js"></script>
+
+
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -23,11 +23,22 @@
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="bootstrap.min.js"></script>
+
     <meta charset="utf-8">
     <title>Verizon Complaints</title>    
   </head>
   <body>    
 	<script>
+	$(document).ready(function() {
+	jQuery("iframe#iframeMap").attr("src", "../jsp/Mapstech.html");
+	});
+	$('#myModal').on('shown.bs.modal', function () {
+	
+  $('#myInput').focus()
+})
 		localStorage.clear();
 
 		var Tech1 = {};
@@ -194,7 +205,7 @@
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				<!-- Button trigger modal -->
 				
-				<a href="#">Assign</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Assign</a>
 				
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
@@ -274,6 +285,30 @@
 			</td>
 		</tr>
 	</table>
+	
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+             
+	
+        <h4 class="modal-title" id="myModalLabel">Technician Availability</h4>
+      </div>
+      <div class="modal-body">
+       <iframe frameborder="0" scrolling="no" id="iframeMap" 
+								height="400px" width="100%" ></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
                             </div>
                             <!-- /.table-responsive -->
                            

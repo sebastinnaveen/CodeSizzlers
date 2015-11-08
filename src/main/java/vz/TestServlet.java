@@ -83,7 +83,9 @@ public class TestServlet extends HttpServlet {
     		Content content = new Content();
     		   //POJO class as above for standard message format
     		  // content.addRegId("APA91bERQuEQxDtlMdmdGZ96-A3lRfvn_y4Wt0fE55G5rfmG7M93P9lcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jlt1y5z_l1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");
-    		content.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");
+    		//content.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRl7oVU0-xns3Zgn4j-UejDVC_lOWjfp4lw");
+    		content.addRegId("APA91bHhEh3JBNr8siLLZKzzcTXWEG8xOVs7QEDcqXF9wyBX5d0DOhry8N73infE9TCG8Bm2aJAmlBaA9PwA0qmiomoFXd2zP_A-RluiUHigWUbPGkr2CLTCXzHxS5O04yABbMiuKK0U");
+    		//APA91bHhEh3JBNr8siLLZKzzcTXWEG8xOVs7QEDcqXF9wyBX5d0DOhry8N73infE9TCG8Bm2aJAmlBaA9PwA0qmiomoFXd2zP_A-RluiUHigWUbPGkr2CLTCXzHxS5O04yABbMiuKK0U
     		   content.createData("Title", "Notification Message");
     		   URL url = new URL("https://android.googleapis.com/gcm/send");
     		   conn = (HttpURLConnection) url.openConnection();
