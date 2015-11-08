@@ -22,14 +22,14 @@
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="examples.css" />
+
  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
 
-
+<link rel="stylesheet" type="text/css" href="../examples.css"/>
     <meta charset="utf-8">
     <title>SwapPlan</title>    
   </head>
@@ -44,15 +44,15 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            
             txtEmail: {
                 validators: {
                     notEmpty: {
                         message: 'The email address is required and cannot be empty'
                     }
-                  
                 }
             }
+           
+            
         }
     });
 });
@@ -218,16 +218,18 @@ $(document).ready(function() {
             <!-- /.navbar-static-side -->
         </nav>
 	  <div id="page-wrapper">
-             <div>
+             
             <div>                
                     <h1>Easy Plan Swap</h1>                
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-             <form role="form" name="swapPlan" id="swapPlan" method="post" action="../searchController?type=swapplan">
+             
             
-            <div>
-			    <div>
+            <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+			    <form role="form" name="swapPlan" id="swapPlan" method="post" action="../searchController?type=swapplan">
 			    <% if(request.getAttribute("success")!=null&&request.getAttribute("success").equals("mobilesub")){ %>
 			    	<Label id="lblMessage" ><font color="green">Your selected new plan will be effective from the next billing cycle. Any clarifications please contact "#201-888-4521". !</font></Label>
                     <br/>
@@ -296,18 +298,19 @@ $(document).ready(function() {
 					<label class="desc" id="title4" for="Field9">
 						<span style="font-family:'verdana';font-size:12px;"><b>Please enter your email if you'd like us to follow up with you.</b></span>
 					</label>
-					<div>
+					<div class="form-group">
 						 <input class="form-control" name="txtEmail">
 					</div>
 					<br/>
-					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit"  value="Submit Request >>" />
+					<button type="submit" class="btn btn-default" >Submit Complaint >></button>     
+					 </form>
 				</div>                    
                         
                         
              </div>
-             </form>
             
-        </div>
+            </div>
+       
         </div>
 	
   </body>
