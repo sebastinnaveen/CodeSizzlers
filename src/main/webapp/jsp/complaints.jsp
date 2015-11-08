@@ -187,7 +187,7 @@ $(document).ready(function() {
                                 <div class="col-lg-6">
                                     <form role="form" name="complaints" id="complaints" method="post" action="../searchController?type=complaints">
                                     <% if(request.getAttribute("success")!=null&&request.getAttribute("success").equals("mobilesub")){ %>
-                                    	<Label id="lblMessage" style="display:none;"><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
+                                    	<Label id="lblMessage" ><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
                                     	<br/>
                                     	  <%} %>	
                                         <div class="form-group">

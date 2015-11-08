@@ -45,7 +45,7 @@ $(document).ready(function() {
         },
         fields: {
             
-            emailId: {
+            txtEmail: {
                 validators: {
                     notEmpty: {
                         message: 'The email address is required and cannot be empty'
@@ -297,7 +297,7 @@ $(document).ready(function() {
 						<span style="font-family:'verdana';font-size:12px;"><b>Please enter your email if you'd like us to follow up with you.</b></span>
 					</label>
 					<div>
-						<input id="email" name="emailId" type="email" spellcheck="false" class="field text medium" value=""	maxlength="255" tabindex="13" />
+						 <input class="form-control" name="txtEmail">
 					</div>
 					<br/>
 					<input id="saveForm" name="saveForm" class="btTxt submit" type="submit"  value="Submit Request >>" />
