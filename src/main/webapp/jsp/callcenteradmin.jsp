@@ -154,7 +154,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <table border="1" width="100%">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 		<tr bgcolor="Grey">
 			<td width="10%" align="center" style="font-face:verdana;font-size:18px;" background-color="Grey">
 				Request Id
