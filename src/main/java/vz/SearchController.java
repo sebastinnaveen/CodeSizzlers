@@ -96,7 +96,7 @@ public class SearchController extends HttpServlet {
         		msgBean.setCustomerLocation(request.getParameter("customerLocation"));
         		msgBean.setCustomerNumber(request.getParameter("customerNumber"));
         		//msgBean.setMsgTech(request.getParameter("message"));
-        
+         
         		//c.addRegId("APA91bERQuEQxDtIMdmdGZ96-A3IRfvn_y4Wt0fE55G5rfmG7M93P9IcfFTb4Ruh-ByqngiezG-6-E9_E4JLjE379wxh8jIt1y5z_I1JmMRI7oVU0-xns3Zgn4j-UejDVC_IOWjfp4Iw");
         	//	c.createData("customerName", "sebastinnaveen");
 //        		c.createData("customerLocation", "Tambaram,chennai");
