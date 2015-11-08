@@ -212,7 +212,7 @@
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
 				<a href="#">Track Technician</a>
 			</td>			
-		</tr>\
+		</tr>
 		<tr>
 			<td width="40%" style="font-face:verdana;font-size:15px;">
 				Gerald
