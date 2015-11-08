@@ -30,7 +30,7 @@
 
 
 	
-<link rel="stylesheet" type="text/css" href="examples.css" />
+<link rel="stylesheet" type="text/css" href="../examples.css" />
     <meta charset="utf-8">
     <title>Verizon Quick Pay</title>    
 	<script>
@@ -124,9 +124,14 @@ $(document).ready(function() {
 			   <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                  <form role="form" name="formPay" id="formPay">
-                                    	<Label id="lblMessage" style="display:none;"><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
+                                  <form role="form" name="formPay" id="formPay" method="post" action="../searchController?type=payments">
+                                  <% if(request.getAttribute("success")!=null&&request.getAttribute("success").equals("mobilesub")){ %>
+                                  
+                                  
+                                    	<Label id="lblMessage" ><font color="green">We have received your complaint request (Request Id : #4355678), our representative will contact you shortly. !</font></Label>
                                     	<br/>
+                                    	
+                                    <%} %>	
                                         <div class="form-group">
                                           <label>Enter Landline (or) Mobile Number </label>
                                             <input class="form-control" name="txtMobNo">
@@ -145,7 +150,7 @@ $(document).ready(function() {
                                               <input class="form-control" name="txtAmt"> <a href="#">Want to know your bill amount?</a>
                                         </div>
                                         
-                                               <button type="submit" class="btn btn-default" onClick="javascript:return clickbtn();">Pay >></button>                                        
+                                               <button type="submit" class="btn btn-default" >Pay >></button>                                        
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

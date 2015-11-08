@@ -77,7 +77,7 @@ public class SearchController extends HttpServlet {
  try {
 	 //logger.info("Inside servlet");
      String requestType = request.getParameter("type");
-     if(requestType.equalsIgnoreCase("Notify"))
+     if(requestType!=null&&requestType.equalsIgnoreCase("Notify"))
      {
     	 
     	 System.out.println("calling");
@@ -170,11 +170,27 @@ public class SearchController extends HttpServlet {
     		
     		
      }
-     else if(requestType.equals("Complaints"))
+     else if(requestType!=null&&requestType.equals("Complaints"))
      {
     	 System.out.println("requestType--->"+requestType);
     	 request.setAttribute("success", "mobilesub");
 	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/Complaints.html");
+			rd.include(request, response);
+//    	 		response.setContentType("text/html;charset=UTF-8");
+//    	 		PrintWriter out = response.getWriter();
+//    	 		try {
+//    	 				/* TODO output your response here.*/
+//    	 				out.println(requestString);
+//    	 			} finally {
+//    	 					out.close();
+//    	 			}
+    	 
+     	}
+     else if(requestType!=null&&requestType.equals("payments"))
+     {
+    	 System.out.println("requestType--->"+requestType);
+    	 request.setAttribute("success", "mobilesub");
+	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/payments.jsp");
 			rd.include(request, response);
 //    	 		response.setContentType("text/html;charset=UTF-8");
 //    	 		PrintWriter out = response.getWriter();
