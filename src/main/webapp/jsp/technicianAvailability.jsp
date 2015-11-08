@@ -23,6 +23,9 @@
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="bootstrap.min.js"></script>
     <meta charset="utf-8">
     <title>Verizon Complaints</title>    
   </head>
