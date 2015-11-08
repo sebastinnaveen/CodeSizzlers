@@ -92,6 +92,7 @@
 			//document.getElementById("iframeMap").src = "GetTime.html";
 			if(id == 'Fios Tv'){
 			document.getElementById("map1").style.display = 'block';
+			jQuery("iframe#iframeMap").attr("src", "../jsp/Maps.HTML");
 			document.getElementById("map2").style.display = 'none';
 			}
 			else if(id == 'Fios Phone'){
@@ -210,11 +211,12 @@ $(document).ready(function() {
 							<textarea class="form-control" rows="3"></textarea>
 						</div>
 						<div class="form-group" id="map1" style="display: none">
-							<iframe frameborder="0" scrolling="no" id="iframeMap"
-								height="400px" width="100%" src="../jsp/Maps.HTML"></iframe>
+							<iframe frameborder="0" scrolling="no" id="iframeMap" 
+								height="400px" width="100%" ></iframe>
 						</div>
+					
 						<div class="form-group" id="map2" style="display: none">
-							<iframe frameborder="0" scrolling="no" id="iframeMap"
+							<iframe frameborder="0" scrolling="no" id="iframeMap1"
 								height="400px" width="100%" src="../jsp/Maps1.html"></iframe>
 						</div>
 						<button type="submit" class="btn btn-default" >Confirm
