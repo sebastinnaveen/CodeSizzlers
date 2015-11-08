@@ -28,6 +28,13 @@
   </head>
   <body>    
 	<script>
+	$(document).ready(function() {
+	jQuery("iframe#iframeMap").attr("src", "../jsp/Mapstech.html");
+	});
+	$('#myModal').on('shown.bs.modal', function () {
+	
+  $('#myInput').focus()
+})
 		localStorage.clear();
 
 		var Tech1 = {};
@@ -182,7 +189,7 @@
 				Fios TV, Fios Internet
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
-				<a href="#">Track Technician</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Track Technician</a>
 			</td>				
 		</tr>
 		<tr>
@@ -196,7 +203,7 @@
 				Fios TV, Fios Internet, Fios Landline
 			</td>	
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
-				<a href="#">Track Technician</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Track Technician</a>
 			</td>			
 		</tr>
 		<tr>
@@ -210,7 +217,7 @@
 				Fios TV, Fios Landline
 			</td>	
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
-				<a href="#">Track Technician</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Track Technician</a>
 			</td>			
 		</tr>
 		<tr>
@@ -224,12 +231,31 @@
 				All Fios Services
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
-				<a href="#">Track Technician</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Track Technician</a>
 			</td>				
 		</tr>
 	</table>
 	
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+             
 	
+        <h4 class="modal-title" id="myModalLabel">Technician Availability</h4>
+      </div>
+      <div class="modal-body">
+       <iframe frameborder="0" scrolling="no" id="iframeMap" 
+								height="400px" width="100%" ></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 	
                             </div>
                             <!-- /.table-responsive -->
