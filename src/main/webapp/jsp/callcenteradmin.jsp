@@ -115,6 +115,27 @@
 			
 			
 		}
+		function techLoadFunction1(id)
+		{ //alert(id);
+			//document.getElementById("iframeMap").src = "GetTime.html";
+			if(id == 'assoption1'){
+			document.getElementById("fiosTv1").style.display = 'block';
+			document.getElementById("fiosMobile1").style.display = 'none';
+			document.getElementById("fiosInternet1").style.display = 'none';
+			}
+			else if(id == 'assoption2'){
+			document.getElementById("fiosTv1").style.display = 'none';
+			document.getElementById("fiosMobile1").style.display = 'block';
+			document.getElementById("fiosInternet1").style.display = 'none';
+			}
+			else if(id == 'assoption3'){
+			document.getElementById("fiosTv1").style.display = 'none';
+			document.getElementById("fiosMobile1").style.display = 'none';
+			document.getElementById("fiosInternet1").style.display = 'block';
+			}
+			
+			
+		}
 		function insertText () {
     document.getElementById('techAvail').innerHTML = "Assigned";
      document.getElementById('techAvailDate').innerHTML = "16/03/2015";
@@ -396,20 +417,20 @@ function insertText () {
 				<label
 								class="radio-inline"> <input type="radio"
 								name="optionsRadiosInline" id="optionsRadiosInline1"
-								value="option1" onclick="techLoadFunction(this.value);">Fios TV
+								value="assoption1" onclick="techLoadFunction1(this.value);">Fios TV
 							</label>
 			<label
 								class="radio-inline"> <input type="radio"
 								name="optionsRadiosInline" id="optionsRadiosInline2"
-								value="option2" onclick="techLoadFunction(this.value);">Fios Mobile
+								value="assoption2" onclick="techLoadFunction1(this.value);">Fios Mobile
 							</label>
 							<label
 								class="radio-inline"> <input type="radio"
 								name="optionsRadiosInline" id="optionsRadiosInline3"
-								value="option3" onclick="techLoadFunction(this.value);">Fios Internet
+								value="assoption3" onclick="techLoadFunction1(this.value);">Fios Internet
 							</label>
 							<br/><br/>
-							<div class="form-group" id="fiosTv" style="display:none">
+							<div class="form-group" id="fiosTv1" style="display:none">
 							<label>Fios Tv Technicians</label> <select class="form-control"
 								>
 								<option>--Select--</option>
@@ -419,7 +440,7 @@ function insertText () {
  
 							</select>
 						</div>
-						<div class="form-group" id="fiosMobile" style="display:none">
+						<div class="form-group" id="fiosMobile1" style="display:none">
 							<label>Fios Mobile Technicians</label> <select class="form-control"
 								>
 								<option>--Select--</option>
@@ -429,7 +450,7 @@ function insertText () {
  
 							</select>
 						</div>
-						<div class="form-group" id="fiosInternet" style="display:none">
+						<div class="form-group" id="fiosInternet1" style="display:none">
 							<label>Fios Internet Technicians</label> <select class="form-control"
 								>
 								<option>--Select--</option>
