@@ -117,6 +117,10 @@
 		}
 		function insertText () {
     document.getElementById('techAvail').innerHTML = "Assigned";
+     document.getElementById('techAvailDate').innerHTML = "16/03/2015";
+      document.getElementById('techName').innerHTML = "Robert Bob";
+    //techAvailDate
+    //techName
 }
 	</script>
     
@@ -225,10 +229,10 @@
 				<a href="#" data-toggle="modal" data-target="#myModal">Assign</a>
 				
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
+			<td width="10%" style="font-face:verdana;font-size:15px;" id="techAvailDate">
 				
 			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
+			<td width="20%" align="center" style="font-face:verdana;font-size:15px;" id="techName">
 				
 			</td>
 		</tr>
@@ -331,7 +335,7 @@
 							</label>
 							<br/><br/>
 							<div class="form-group" id="fiosTv" style="display:none">
-							<label>Tec</label> <select class="form-control"
+							<label>Fios Tv Technicians</label> <select class="form-control"
 								>
 								<option>--Select--</option>
 								<option>Robert Bob</option>
@@ -341,7 +345,7 @@
 							</select>
 						</div>
 						<div class="form-group" id="fiosMobile" style="display:none">
-							<label>Tec</label> <select class="form-control"
+							<label>Fios Mobile Technicians</label> <select class="form-control"
 								>
 								<option>--Select--</option>
 								<option>Kimberly</option>
@@ -351,7 +355,7 @@
 							</select>
 						</div>
 						<div class="form-group" id="fiosInternet" style="display:none">
-							<label>Technician List</label> <select class="form-control"
+							<label>Fios Internet Technicians</label> <select class="form-control"
 								>
 								<option>--Select--</option>
 								<option>Mike</option>
