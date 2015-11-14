@@ -122,6 +122,13 @@
     //techAvailDate
     //techName
 }
+function insertText () {
+    document.getElementById('techAvail').innerHTML = "Assigned";
+     document.getElementById('techAvailDate').innerHTML = "16/03/2015";
+      document.getElementById('techName').innerHTML = "Kimberly";
+    //techAvailDate
+    //techName
+}
 	</script>
     
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -273,7 +280,7 @@
 				04/23/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				<a href="#" data-toggle="modal" data-target="#myModal">Assign</a>
+				<a href="#" data-toggle="modal" data-target="#myModal1">Assign</a>
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				
@@ -367,6 +374,74 @@
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal" onclick="insertText();">Assign</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+             
+	
+        <h4 class="modal-title" id="myModalLabel">Assign Technician</h4>
+      </div>
+      <div class="modal-body">
+     
+				<label
+								class="radio-inline"> <input type="radio"
+								name="optionsRadiosInline" id="optionsRadiosInline1"
+								value="option1" onclick="techLoadFunction(this.value);">Fios TV
+							</label>
+			<label
+								class="radio-inline"> <input type="radio"
+								name="optionsRadiosInline" id="optionsRadiosInline2"
+								value="option2" onclick="techLoadFunction(this.value);">Fios Mobile
+							</label>
+							<label
+								class="radio-inline"> <input type="radio"
+								name="optionsRadiosInline" id="optionsRadiosInline3"
+								value="option3" onclick="techLoadFunction(this.value);">Fios Internet
+							</label>
+							<br/><br/>
+							<div class="form-group" id="fiosTv" style="display:none">
+							<label>Fios Tv Technicians</label> <select class="form-control"
+								>
+								<option>--Select--</option>
+								<option>Robert Bob</option>
+								<option>Swizdor</option>
+								<option>Jim</option>
+ 
+							</select>
+						</div>
+						<div class="form-group" id="fiosMobile" style="display:none">
+							<label>Fios Mobile Technicians</label> <select class="form-control"
+								>
+								<option>--Select--</option>
+								<option>Kimberly</option>
+								<option>Joe</option>
+								<option>slota</option>
+ 
+							</select>
+						</div>
+						<div class="form-group" id="fiosInternet" style="display:none">
+							<label>Fios Internet Technicians</label> <select class="form-control"
+								>
+								<option>--Select--</option>
+								<option>Mike</option>
+								<option>Burtha</option>
+								<option>Jeff</option>
+ 
+							</select>
+						</div>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" onclick="insertText1();">Assign</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        
       </div>
