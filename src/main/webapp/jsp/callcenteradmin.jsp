@@ -144,9 +144,9 @@
     //techName
 }
 function insertText1() {
-    document.getElementById('techAvail').innerHTML = "Assigned";
-     document.getElementById('techAvailDate').innerHTML = "16/03/2015";
-      document.getElementById('techName').innerHTML = "Kimberly";
+    document.getElementById('techAvail1').innerHTML = "Assigned";
+     document.getElementById('techAvailDate1').innerHTML = "16/03/2015";
+      document.getElementById('techName1').innerHTML = "Kimberly";
     //techAvailDate
     //techName
 }
@@ -300,13 +300,13 @@ function insertText1() {
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				04/23/2015
 			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;" id="techAvail1">
 				<a href="#" data-toggle="modal" data-target="#myModal1">Assign</a>
 			</td>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
+			<td width="10%" style="font-face:verdana;font-size:15px;" id="techAvailDate1">
 				
 			</td>
-			<td width="20%" align="center" style="font-face:verdana;font-size:15px;">
+			<td width="20%" align="center" style="font-face:verdana;font-size:15px;" id="techName1">
 				
 			</td>
 		</tr>
