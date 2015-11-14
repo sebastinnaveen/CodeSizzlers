@@ -199,7 +199,7 @@
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				<!-- Button trigger modal -->
 				
-				<a href="#">Assign</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Assign</a>
 				
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
@@ -280,7 +280,51 @@
 		</tr>
 	</table>
 	
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+             
+	
+        <h4 class="modal-title" id="myModalLabel">Assign Technician</h4>
+      </div>
+      <div class="modal-body">
+     
+				<label
+								class="radio-inline"> <input type="radio"
+								name="optionsRadiosInline" id="optionsRadiosInline1"
+								value="option1" checked>Fios TV
+							</label>
+			<label
+								class="radio-inline"> <input type="radio"
+								name="optionsRadiosInline" id="optionsRadiosInline2"
+								value="option2" checked>Fios Mobile
+							</label>
+							<label
+								class="radio-inline"> <input type="radio"
+								name="optionsRadiosInline" id="optionsRadiosInline3"
+								value="option3" checked>Fios Internet
+							</label>
+							<div class="form-group">
+							<label>Products Category</label> <select class="form-control"
+								>
+								<option>--Select--</option>
+								<option>Robert Bob</option>
+								<option>Swizdor</option>
+								<option>Jim</option>
 
+							</select>
+						</div>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Assign</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 
