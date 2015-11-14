@@ -107,7 +107,7 @@
 			document.getElementById("fiosMobile").style.display = 'block';
 			document.getElementById("fiosInternet").style.display = 'none';
 			}
-			else if(id == 'option2'){
+			else if(id == 'option3'){
 			document.getElementById("fiosTv").style.display = 'none';
 			document.getElementById("fiosMobile").style.display = 'none';
 			document.getElementById("fiosInternet").style.display = 'block';
@@ -115,7 +115,9 @@
 			
 			
 		}
-		
+		function insertText () {
+    document.getElementById('techAvail').innerHTML = "Assigned";
+}
 	</script>
     
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -217,7 +219,7 @@
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				10/22/2015
 			</td>
-			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
+			<td width="10%" align="center" style="font-face:verdana;font-size:15px;" id="techAvail">
 				<!-- Button trigger modal -->
 				
 				<a href="#" data-toggle="modal" data-target="#myModal">Assign</a>
@@ -267,7 +269,7 @@
 				04/23/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
-				<a href="#">Assign</a>
+				<a href="#" data-toggle="modal" data-target="#myModal">Assign</a>
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
 				
@@ -349,7 +351,7 @@
 							</select>
 						</div>
 						<div class="form-group" id="fiosInternet" style="display:none">
-							<label>Tec</label> <select class="form-control"
+							<label>Technician List</label> <select class="form-control"
 								>
 								<option>--Select--</option>
 								<option>Mike</option>
@@ -360,7 +362,7 @@
 						</div>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Assign</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal" onclick="insertText();">Assign</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        
       </div>
