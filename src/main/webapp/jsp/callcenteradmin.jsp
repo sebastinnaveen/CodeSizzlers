@@ -94,6 +94,27 @@
 			
 			
 		}
+		function techLoadFunction(id)
+		{ //alert(id);
+			//document.getElementById("iframeMap").src = "GetTime.html";
+			if(id == 'option1'){
+			document.getElementById("fiosTv").style.display = 'block';
+			document.getElementById("fiosMobile").style.display = 'none';
+			document.getElementById("fiosInternet").style.display = 'none';
+			}
+			else if(id == 'option2'){
+			document.getElementById("fiosTv").style.display = 'none';
+			document.getElementById("fiosMobile").style.display = 'block';
+			document.getElementById("fiosInternet").style.display = 'none';
+			}
+			else if(id == 'option2'){
+			document.getElementById("fiosTv").style.display = 'none';
+			document.getElementById("fiosMobile").style.display = 'none';
+			document.getElementById("fiosInternet").style.display = 'block';
+			}
+			
+			
+		}
 		
 	</script>
     
@@ -294,25 +315,46 @@
 				<label
 								class="radio-inline"> <input type="radio"
 								name="optionsRadiosInline" id="optionsRadiosInline1"
-								value="option1" checked>Fios TV
+								value="option1" onclick="techLoadFunction(this.value);">Fios TV
 							</label>
 			<label
 								class="radio-inline"> <input type="radio"
 								name="optionsRadiosInline" id="optionsRadiosInline2"
-								value="option2" checked>Fios Mobile
+								value="option2" onclick="techLoadFunction(this.value);">Fios Mobile
 							</label>
 							<label
 								class="radio-inline"> <input type="radio"
 								name="optionsRadiosInline" id="optionsRadiosInline3"
-								value="option3" checked>Fios Internet
+								value="option3" onclick="techLoadFunction(this.value);">Fios Internet
 							</label>
-							<div class="form-group">
-							<label>Products Category</label> <select class="form-control"
+							<br/><br/>
+							<div class="form-group" id="fiosTv" style="display:none">
+							<label>Tec</label> <select class="form-control"
 								>
 								<option>--Select--</option>
 								<option>Robert Bob</option>
 								<option>Swizdor</option>
 								<option>Jim</option>
+ 
+							</select>
+						</div>
+						<div class="form-group" id="fiosMobile" style="display:none">
+							<label>Tec</label> <select class="form-control"
+								>
+								<option>--Select--</option>
+								<option>Kimberly</option>
+								<option>Joe</option>
+								<option>slota</option>
+ 
+							</select>
+						</div>
+						<div class="form-group" id="fiosInternet" style="display:none">
+							<label>Tec</label> <select class="form-control"
+								>
+								<option>--Select--</option>
+								<option>Mike</option>
+								<option>Burtha</option>
+								<option>Jeff</option>
  
 							</select>
 						</div>
