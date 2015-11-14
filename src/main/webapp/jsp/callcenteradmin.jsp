@@ -143,7 +143,7 @@
     //techAvailDate
     //techName
 }
-function insertText () {
+function insertText1() {
     document.getElementById('techAvail').innerHTML = "Assigned";
      document.getElementById('techAvailDate').innerHTML = "16/03/2015";
       document.getElementById('techName').innerHTML = "Kimberly";
