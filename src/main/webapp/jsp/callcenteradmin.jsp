@@ -138,7 +138,7 @@
 		}
 		function insertText () {
     document.getElementById('techAvail').innerHTML = "Assigned";
-     document.getElementById('techAvailDate').innerHTML = "16/03/2015";
+     document.getElementById('techAvailDate').innerHTML = "20/11/2015";
       document.getElementById('techName').innerHTML = "Robert Bob";
       $.post( "/searchController", { type: "adminRobert"} );
     //techAvailDate
@@ -146,7 +146,7 @@
 }
 function insertText1() {
     document.getElementById('techAvail1').innerHTML = "Assigned";
-     document.getElementById('techAvailDate1').innerHTML = "16/03/2015";
+     document.getElementById('techAvailDate1').innerHTML = "20/11/2015";
       document.getElementById('techName1').innerHTML = "Kimberly";
        $.post( "/searchController", { type: "adminKimberly"} );
     //techAvailDate
