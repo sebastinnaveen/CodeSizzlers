@@ -28,7 +28,7 @@
 <script type="text/javascript" src="bootstrap.min.js"></script>
 
     <meta charset="utf-8">
-    <title>Verizon Complaints</title>    
+    <title>VzCommunicator-Call Center Admin</title>    
   </head>
   <body>    
 	<script>
