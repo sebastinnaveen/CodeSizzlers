@@ -145,13 +145,16 @@
 			</td>
 			<td width="40%" align="center" style="font-face:verdana;">
 				
-                                            
-                                            <select >
-                                               
-                                                <option selected="selected">In Progress</option>
+                                        <div class="form-group">
+                                           
+                                            <select class="form-control">
+                                                <option>In Progress</option>
+                                                <option>New</option>
                                                 <option>Closed</option>
                                                
                                             </select>
+                                        </div>    
+                                           
                                         
 			</td>				
 		</tr>
@@ -167,12 +170,16 @@
 				21/11/2015
 			</td>	
 			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
-				<select  disabled="disabled">
+			<div class="form-group">
+                                           
+                                            <select id="disabledSelect"  class="form-control">
                                                 <option>Closed</option>
-                                               
+                                                <option>New</option>
                                                 <option>In Progress</option>
                                                
                                             </select>
+                                        </div>   
+				
 			</td>			
 		</tr>
 		<tr>
@@ -186,12 +193,15 @@
 				22/11/2015
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
-				<select  disabled="disabled">
+					<div class="form-group">
+                                           
+                                            <select id="disabledSelect"  class="form-control">
                                                 <option>Closed</option>
                                                 <option>New</option>
                                                 <option>In Progress</option>
                                                
                                             </select>
+                                        </div> 
 			</td>
 			<% 	String robertvalue ="";
 			//String kimvalue ="";
@@ -235,12 +245,7 @@
 				22/11/2015
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
-				<select >
-                                                <option>New</option>
-                                                <option>In Progress</option>
-                                                <option>Closed</option>
-                                               
-                                            </select>
+		
 			</td>				
 		</tr>
 		<%} if(kimvalue!=null&&kimvalue.equals("yes")){%>	
@@ -258,12 +263,15 @@
 				22/11/2015
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
-				<select >
+					<div class="form-group">
+                                           
+                                            <select   class="form-control">
                                                 <option>New</option>
                                                 <option>In Progress</option>
                                                 <option>Closed</option>
                                                
                                             </select>
+                                        </div> 
 			</td>				
 		</tr>
 		<%} %>	

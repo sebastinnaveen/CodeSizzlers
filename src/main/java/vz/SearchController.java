@@ -283,7 +283,7 @@ public class SearchController extends HttpServlet {
         		
         		//content.addRegId("APA91bGqqyr-X4Wu_MGFk8Mu9bhq8dcuVO62cTWFelPa2LjvgpIxTL3IzsME76pVHwVsCb1C8vZoFjzTzEnwko_B902ou0okU5B35l_5xzeagqd4_TLT8apSYwQ8VSF6oqOakz2_1bBT");
         		//APA91bGqqyr-X4Wu_MGFk8Mu9bhq8dcuVO62cTWFelPa2LjvgpIxTL3IzsME76pVHwVsCb1C8vZoFjzTzEnwko_B902ou0okU5B35l_5xzeagqd4_TLT8apSYwQ8VSF6oqOakz2_1bBT
-        		   content.createAdminBobData("Title", "New Job Request");
+        		   content.createAdminBobData("Title", "Your New Job");
         		   URL url = new URL("https://android.googleapis.com/gcm/send");
         		   conn = (HttpURLConnection) url.openConnection();
         		   conn.setRequestMethod("POST");
@@ -404,7 +404,7 @@ public class SearchController extends HttpServlet {
         		
         		//content.addRegId("APA91bGqqyr-X4Wu_MGFk8Mu9bhq8dcuVO62cTWFelPa2LjvgpIxTL3IzsME76pVHwVsCb1C8vZoFjzTzEnwko_B902ou0okU5B35l_5xzeagqd4_TLT8apSYwQ8VSF6oqOakz2_1bBT");
         		//APA91bGqqyr-X4Wu_MGFk8Mu9bhq8dcuVO62cTWFelPa2LjvgpIxTL3IzsME76pVHwVsCb1C8vZoFjzTzEnwko_B902ou0okU5B35l_5xzeagqd4_TLT8apSYwQ8VSF6oqOakz2_1bBT
-        		   content.createAdminKimData("Title", "New Job Request");
+        		   content.createAdminKimData("Title", "Your New Job");
         		   URL url = new URL("https://android.googleapis.com/gcm/send");
         		   conn = (HttpURLConnection) url.openConnection();
         		   conn.setRequestMethod("POST");
