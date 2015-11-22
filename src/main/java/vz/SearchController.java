@@ -1,4 +1,9 @@
 package vz;
+import argo.jdom.JdomParser;
+import argo.jdom.JsonNode;
+import argo.jdom.JsonRootNode;
+import argo.saj.InvalidSyntaxException;
+
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.MulticastResult;
 import com.google.android.gcm.server.Sender;
@@ -35,6 +40,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.Protocol;
 
 //import org.apache.log4j.//logger;
 
@@ -304,9 +314,34 @@ public class SearchController extends HttpServlet {
     			e.printStackTrace();
     			//response.getWriter().append("Error at: ").append(e.getMessage());
     		}
-    		request.setAttribute("success", "mobilesub");
-    	     RequestDispatcher rd = request.getRequestDispatcher("/jsp/successMessage.jsp");
-    			rd.include(request, response);
+    		try {
+			    String vcap_services = System.getenv("VCAP_SERVICES");
+			    if (vcap_services != null && vcap_services.length() > 0) {
+			        // parsing rediscloud credentials
+			        JsonRootNode root = new JdomParser().parse(vcap_services);
+			        JsonNode rediscloudNode = root.getNode("rediscloud");
+			        JsonNode credentials = rediscloudNode.getNode(0).getNode("credentials");
+
+			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
+			                credentials.getStringValue("hostname"),
+			               12636,
+			                Protocol.DEFAULT_TIMEOUT,
+			                credentials.getStringValue("password"));
+			        Jedis jedis = pool.getResource();
+			        jedis.set("adminRobert", "yes");
+			      //  String value = jedis.get("foo");
+			        // return the instance to the pool when you're done
+			        pool.returnResource(jedis);
+			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
+			    }
+			} catch (InvalidSyntaxException ex) {
+			    // vcap_services could not be parsed.
+				response.getWriter().append("Error at: ").append(ex.getMessage());
+			}
+			
+    		//request.setAttribute("success", "mobilesub");
+    	    // RequestDispatcher rd = request.getRequestDispatcher("/jsp/successMessage.jsp");
+    		//	rd.include(request, response);
     		
     		/*String jsonMsg = json.toJson(msgBean);
     		

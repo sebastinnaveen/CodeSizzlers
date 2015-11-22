@@ -19,7 +19,14 @@
 
     <!-- Morris Charts CSS -->
     <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
-
+<%@ page import="argo.jdom.JdomParser" %>
+<%@ page import="argo.jdom.JsonNode" %>
+<%@ page import="argo.jdom.JsonRootNode" %>
+<%@ page import="argo.saj.InvalidSyntaxException" %>
+<%@ page import="redis.clients.jedis.Jedis" %>
+<%@ page import="redis.clients.jedis.JedisPool" %>
+<%@ page import="redis.clients.jedis.JedisPoolConfig" %>
+<%@ page import="redis.clients.jedis.Protocol" %>
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="examples.css" />
@@ -185,8 +192,55 @@
                                                 <option>In Progress</option>
                                                
                                             </select>
+			</td>
+			<% 	String value ="";
+			try {
+			    String vcap_services = System.getenv("VCAP_SERVICES");
+			    if (vcap_services != null && vcap_services.length() > 0) {
+			        // parsing rediscloud credentials
+			        JsonRootNode root = new JdomParser().parse(vcap_services);
+			        JsonNode rediscloudNode = root.getNode("rediscloud");
+			        JsonNode credentials = rediscloudNode.getNode(0).getNode("credentials");
+
+			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
+			                credentials.getStringValue("hostname"),
+			               12636,
+			                Protocol.DEFAULT_TIMEOUT,
+			                credentials.getStringValue("password"));
+			        Jedis jedis = pool.getResource();
+			     //   jedis.set("adminRobert", "yes");
+			        value = jedis.get("adminRobert");
+			        // return the instance to the pool when you're done
+			        pool.returnResource(jedis);
+			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
+			    }
+			} catch (InvalidSyntaxException ex) {
+			    // vcap_services could not be parsed.
+				//response.getWriter().append("Error at: ").append(ex.getMessage());
+			}
+			if(value!=null&&value.equals("yes")){
+			%>				
+		</tr>
+			<tr>
+			<td width="40%" style="font-face:verdana;font-size:15px;">
+				1236785
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				Set up box not working - Posted by Smith, FL, 213-867-8367
+			</td>
+			<td width="30%" style="font-face:verdana;font-size:15px;">
+				22/11/2015
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				<select >
+                                                <option>New</option>
+                                                <option>In Progress</option>
+                                                <option>Closed</option>
+                                               
+                                            </select>
 			</td>				
 		</tr>
+		<%} %>	
 	</table>
 	
 	
