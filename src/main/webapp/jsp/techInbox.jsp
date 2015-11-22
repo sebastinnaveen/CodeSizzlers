@@ -120,30 +120,30 @@
                             
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 		<tr>
-			<td width="10%" align="center" style="font-face:verdana;font-size:18px;">
+			<td >
 				Request Id
 			</td>			
-			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+			<td >
 				Request
 			</td>
 			
-			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">
+			<td >
 				Request Date
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:18px;">Status
+			<td >Status
 			</td>		
 		</tr>
 		<tr>
-			<td width="10%" style="font-face:verdana;font-size:15px;">
+			<td >
 				11011
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td >
 				Fios Tv Installation
 			</td>
-			<td width="30%" style="font-face:verdana;font-size:15px;">
-				20/11/2015
+			<td >
+				23/11/2015
 			</td>
-			<td width="40%" align="center" style="font-face:verdana;">
+			<td>
 				
                                         <div class="form-group">
                                            
@@ -160,16 +160,16 @@
 		</tr>
 		
 		<tr>
-			<td width="40%" style="font-face:verdana;font-size:15px;">
+			<td>
 				10003
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td>
 				Fios Internet Installation
 			</td>
-			<td width="30%" style="font-face:verdana;font-size:15px;">
-				21/11/2015
+			<td>
+				23/11/2015
 			</td>	
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td>
 			<div class="form-group">
                                            
                                             <select id="disabledSelect"  class="form-control">
@@ -183,16 +183,16 @@
 			</td>			
 		</tr>
 		<tr>
-			<td width="40%" style="font-face:verdana;font-size:15px;">
+			<td>
 				10004
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td >
 				Fios Landline Installtion
 			</td>
-			<td width="30%" style="font-face:verdana;font-size:15px;">
-				22/11/2015
+			<td>
+				23/11/2015
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td>
 					<div class="form-group">
                                            
                                             <select id="disabledSelect"  class="form-control">
@@ -235,17 +235,25 @@
 			%>				
 		</tr>
 			<tr>
-			<td width="40%" style="font-face:verdana;font-size:15px;">
+			<td>
 				1236785
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td>
 				Set up box not working - Posted by Smith, FL, 213-867-8367
 			</td>
-			<td width="30%" style="font-face:verdana;font-size:15px;">
+			<td>
 				22/11/2015
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
-		
+			<td>
+		<div class="form-group">
+                                           
+                                            <select   class="form-control">
+                                                <option>New</option>
+                                                <option>In Progress</option>
+                                                <option>Closed</option>
+                                               
+                                            </select>
+                                        </div> 
 			</td>				
 		</tr>
 		<%} if(kimvalue!=null&&kimvalue.equals("yes")){%>	
@@ -253,16 +261,16 @@
 					
 		</tr>
 			<tr>
-			<td width="40%" style="font-face:verdana;font-size:15px;">
+			<td>
 				1236745
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td>
 				Cable was not properly placed - Posted by Peter, NY, 213-867-8367
 			</td>
-			<td width="30%" style="font-face:verdana;font-size:15px;">
+			<td>
 				22/11/2015
 			</td>
-			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+			<td>
 					<div class="form-group">
                                            
                                             <select   class="form-control">

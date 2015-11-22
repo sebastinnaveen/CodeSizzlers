@@ -77,32 +77,32 @@ public class TestServlet extends HttpServlet {
 		try
 		{
 			
-//			
-//			try {
-//			    String vcap_services = System.getenv("VCAP_SERVICES");
-//			    if (vcap_services != null && vcap_services.length() > 0) {
-//			        // parsing rediscloud credentials
-//			        JsonRootNode root = new JdomParser().parse(vcap_services);
-//			        JsonNode rediscloudNode = root.getNode("rediscloud");
-//			        JsonNode credentials = rediscloudNode.getNode(0).getNode("credentials");
-//
-//			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
-//			                credentials.getStringValue("hostname"),
-//			               12636,
-//			                Protocol.DEFAULT_TIMEOUT,
-//			                credentials.getStringValue("password"));
-//			        Jedis jedis = pool.getResource();
-//			        jedis.set("adminRobert", "no");
-//			        jedis.set("adminKimberly", "no");
+			
+			try {
+			    String vcap_services = System.getenv("VCAP_SERVICES");
+			    if (vcap_services != null && vcap_services.length() > 0) {
+			        // parsing rediscloud credentials
+			        JsonRootNode root = new JdomParser().parse(vcap_services);
+			        JsonNode rediscloudNode = root.getNode("rediscloud");
+			        JsonNode credentials = rediscloudNode.getNode(0).getNode("credentials");
+
+			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
+			                credentials.getStringValue("hostname"),
+			               12636,
+			                Protocol.DEFAULT_TIMEOUT,
+			                credentials.getStringValue("password"));
+			        Jedis jedis = pool.getResource();
+			        jedis.set("adminRobert", "no");
+			        jedis.set("adminKimberly", "no");
 //			      //  String value = jedis.get("foo");
 //			        // return the instance to the pool when you're done
-//			        pool.returnResource(jedis);
+			        pool.returnResource(jedis);
 //			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
-//			    }
-//			} catch (InvalidSyntaxException ex) {
-//			    // vcap_services could not be parsed.
-//				response.getWriter().append("Error at: ").append(ex.getMessage());
-//			}
+		    }
+			} catch (InvalidSyntaxException ex) {
+			    // vcap_services could not be parsed.
+			response.getWriter().append("Error at: ").append(ex.getMessage());
+			}
 			
 			MessageBean msgBean = new MessageBean();
     		msgBean.setCustomerName(request.getParameter("customerName"));
