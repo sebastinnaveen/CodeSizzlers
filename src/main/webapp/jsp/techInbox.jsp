@@ -133,6 +133,86 @@
 			<td >Status
 			</td>		
 		</tr>
+		<% 	String robertvalue ="";
+			//String kimvalue ="";
+			String kimvalue ="";
+			try {
+			    String vcap_services = System.getenv("VCAP_SERVICES");
+			    if (vcap_services != null && vcap_services.length() > 0) {
+			        // parsing rediscloud credentials
+			        JsonRootNode root = new JdomParser().parse(vcap_services);
+			        JsonNode rediscloudNode = root.getNode("rediscloud");
+			        JsonNode credentials = rediscloudNode.getNode(0).getNode("credentials");
+
+			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
+			                credentials.getStringValue("hostname"),
+			               12636,
+			                Protocol.DEFAULT_TIMEOUT,
+			                credentials.getStringValue("password"));
+			        Jedis jedis = pool.getResource();
+			     //   jedis.set("adminRobert", "yes");
+			        robertvalue = jedis.get("adminRobert");
+			         kimvalue = jedis.get("adminKimberly");
+			        // return the instance to the pool when you're done
+			        pool.returnResource(jedis);
+			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
+			    }
+			} catch (InvalidSyntaxException ex) {
+			    // vcap_services could not be parsed.
+				//response.getWriter().append("Error at: ").append(ex.getMessage());
+			}
+			 if(kimvalue!=null&&kimvalue.equals("yes")){%>	
+		
+					
+		
+			<tr>
+			<td>
+				1236745
+			</td>
+			<td>
+				Cable was not properly placed - Posted by Peter, NY, 213-867-8367
+			</td>
+			<td>
+				22/11/2015
+			</td>
+			<td>
+					<div class="form-group">
+                                           
+                                            <select   class="form-control">
+                                                <option>New</option>
+                                                <option>In Progress</option>
+                                                <option>Closed</option>
+                                               
+                                            </select>
+                                        </div> 
+			</td>				
+		</tr>
+		<%} 
+			if(robertvalue!=null&&robertvalue.equals("yes")){
+			%>		
+			<tr>
+			<td>
+				1236785
+			</td>
+			<td>
+				Set up box not working - Posted by Smith, FL, 213-867-8367
+			</td>
+			<td>
+				22/11/2015
+			</td>
+			<td>
+		<div class="form-group">
+                                           
+                                            <select   class="form-control">
+                                                <option>New</option>
+                                                <option>In Progress</option>
+                                                <option>Closed</option>
+                                               
+                                            </select>
+                                        </div> 
+			</td>				
+		</tr>
+		<%}%>
 		<tr>
 			<td >
 				11011
@@ -203,86 +283,10 @@
                                             </select>
                                         </div> 
 			</td>
-			<% 	String robertvalue ="";
-			//String kimvalue ="";
-			String kimvalue ="";
-			try {
-			    String vcap_services = System.getenv("VCAP_SERVICES");
-			    if (vcap_services != null && vcap_services.length() > 0) {
-			        // parsing rediscloud credentials
-			        JsonRootNode root = new JdomParser().parse(vcap_services);
-			        JsonNode rediscloudNode = root.getNode("rediscloud");
-			        JsonNode credentials = rediscloudNode.getNode(0).getNode("credentials");
-
-			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
-			                credentials.getStringValue("hostname"),
-			               12636,
-			                Protocol.DEFAULT_TIMEOUT,
-			                credentials.getStringValue("password"));
-			        Jedis jedis = pool.getResource();
-			     //   jedis.set("adminRobert", "yes");
-			        robertvalue = jedis.get("adminRobert");
-			         kimvalue = jedis.get("adminKimberly");
-			        // return the instance to the pool when you're done
-			        pool.returnResource(jedis);
-			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
-			    }
-			} catch (InvalidSyntaxException ex) {
-			    // vcap_services could not be parsed.
-				//response.getWriter().append("Error at: ").append(ex.getMessage());
-			}
-			if(robertvalue!=null&&robertvalue.equals("yes")){
-			%>				
-		</tr>
-			<tr>
-			<td>
-				1236785
-			</td>
-			<td>
-				Set up box not working - Posted by Smith, FL, 213-867-8367
-			</td>
-			<td>
-				22/11/2015
-			</td>
-			<td>
-		<div class="form-group">
-                                           
-                                            <select   class="form-control">
-                                                <option>New</option>
-                                                <option>In Progress</option>
-                                                <option>Closed</option>
-                                               
-                                            </select>
-                                        </div> 
-			</td>				
-		</tr>
-		<%} if(kimvalue!=null&&kimvalue.equals("yes")){%>	
-		
 					
 		</tr>
-			<tr>
-			<td>
-				1236745
-			</td>
-			<td>
-				Cable was not properly placed - Posted by Peter, NY, 213-867-8367
-			</td>
-			<td>
-				22/11/2015
-			</td>
-			<td>
-					<div class="form-group">
-                                           
-                                            <select   class="form-control">
-                                                <option>New</option>
-                                                <option>In Progress</option>
-                                                <option>Closed</option>
-                                               
-                                            </select>
-                                        </div> 
-			</td>				
-		</tr>
-		<%} %>	
+		
+			
 	</table>
 	
 	

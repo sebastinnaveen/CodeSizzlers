@@ -34,7 +34,7 @@ public void createAdminBobData(String title, String message){
     data.put("customerName", "Smith");
     data.put("customerLocation", "FL, USA");
     data.put("customerNumber", "213-867-8367");
-    data.put("msgTech", "Robert Bob New Request Id - 1236785");
+    data.put("msgTech", "Robert Bob Your New Job Id - 1236785");
 }
 
 public void createAdminKimData(String title, String message){
@@ -44,7 +44,7 @@ public void createAdminKimData(String title, String message){
     data.put("customerName", "Peter");
     data.put("customerLocation", "NY,USA");
     data.put("customerNumber", "213-867-8367");
-    data.put("msgTech", "Kimberly New Request Id - 1236745");
+    data.put("msgTech", "Kimberly Your New Job Id - 1236745");
 }
 
 }
