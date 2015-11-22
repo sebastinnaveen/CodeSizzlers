@@ -193,7 +193,8 @@
                                                
                                             </select>
 			</td>
-			<% 	String value ="";
+			<% 	String robertvalue ="";
+			String kimvalue ="";
 			try {
 			    String vcap_services = System.getenv("VCAP_SERVICES");
 			    if (vcap_services != null && vcap_services.length() > 0) {
@@ -209,7 +210,8 @@
 			                credentials.getStringValue("password"));
 			        Jedis jedis = pool.getResource();
 			     //   jedis.set("adminRobert", "yes");
-			        value = jedis.get("adminRobert");
+			        robertvalue = jedis.get("adminRobert");
+			         robertvalue = jedis.get("adminKimberly");
 			        // return the instance to the pool when you're done
 			        pool.returnResource(jedis);
 			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
@@ -218,7 +220,7 @@
 			    // vcap_services could not be parsed.
 				//response.getWriter().append("Error at: ").append(ex.getMessage());
 			}
-			if(value!=null&&value.equals("yes")){
+			if(robertvalue!=null&&robertvalue.equals("yes")){
 			%>				
 		</tr>
 			<tr>
@@ -227,6 +229,29 @@
 			</td>
 			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
 				Set up box not working - Posted by Smith, FL, 213-867-8367
+			</td>
+			<td width="30%" style="font-face:verdana;font-size:15px;">
+				22/11/2015
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				<select >
+                                                <option>New</option>
+                                                <option>In Progress</option>
+                                                <option>Closed</option>
+                                               
+                                            </select>
+			</td>				
+		</tr>
+		<%} if(kimvalue!=null&&kimvalue.equals("yes")){%>	
+		
+					
+		</tr>
+			<tr>
+			<td width="40%" style="font-face:verdana;font-size:15px;">
+				1236745
+			</td>
+			<td width="30%" align="center" style="font-face:verdana;font-size:15px;">
+				Cable was not properly placed - Posted by Peter, NY, 213-867-8367
 			</td>
 			<td width="30%" style="font-face:verdana;font-size:15px;">
 				22/11/2015

@@ -92,11 +92,12 @@ public class TestServlet extends HttpServlet {
 			                Protocol.DEFAULT_TIMEOUT,
 			                credentials.getStringValue("password"));
 			        Jedis jedis = pool.getResource();
-			        jedis.set("foo", "bar");
-			        String value = jedis.get("foo");
+			        jedis.set("adminRobert", "no");
+			        jedis.set("adminKimberly", "no");
+			      //  String value = jedis.get("foo");
 			        // return the instance to the pool when you're done
 			        pool.returnResource(jedis);
-			        response.getWriter().append("redis value: ").append(String.valueOf(value));
+			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
 			    }
 			} catch (InvalidSyntaxException ex) {
 			    // vcap_services could not be parsed.
