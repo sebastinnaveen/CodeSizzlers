@@ -194,6 +194,7 @@
                                             </select>
 			</td>
 			<% 	String robertvalue ="";
+			//String kimvalue ="";
 			String kimvalue ="";
 			try {
 			    String vcap_services = System.getenv("VCAP_SERVICES");
@@ -211,7 +212,7 @@
 			        Jedis jedis = pool.getResource();
 			     //   jedis.set("adminRobert", "yes");
 			        robertvalue = jedis.get("adminRobert");
-			         robertvalue = jedis.get("adminKimberly");
+			         kimvalue = jedis.get("adminKimberly");
 			        // return the instance to the pool when you're done
 			        pool.returnResource(jedis);
 			    //    response.getWriter().append("redis value: ").append(String.valueOf(value));
