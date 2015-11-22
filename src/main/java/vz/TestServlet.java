@@ -88,7 +88,7 @@ public class TestServlet extends HttpServlet {
 
 			        JedisPool pool = new JedisPool(new JedisPoolConfig(),
 			                credentials.getStringValue("hostname"),
-			                Integer.parseInt(credentials.getNumberValue("port")),
+			               12636,
 			                Protocol.DEFAULT_TIMEOUT,
 			                credentials.getStringValue("password"));
 			        Jedis jedis = pool.getResource();
