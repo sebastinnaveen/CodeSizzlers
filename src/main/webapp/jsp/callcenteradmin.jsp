@@ -277,7 +277,7 @@ function insertText1() {
 				Installation
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				03/22/2015
+				10/22/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;">
 				Assigned
@@ -300,7 +300,7 @@ function insertText1() {
 				Maintenance
 			</td>
 			<td width="10%" style="font-face:verdana;font-size:15px;">
-				04/23/2015
+				11/23/2015
 			</td>
 			<td width="10%" align="center" style="font-face:verdana;font-size:15px;" id="techAvail1">
 				<a href="#" data-toggle="modal" data-target="#myModal1">Assign</a>
